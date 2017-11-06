@@ -1,3 +1,6 @@
+require "net/http"
+require "uri"
+
 class UsersController < ApplicationController
   before_filter :skip_first_page, only: :new
   before_filter :handle_ip, only: :create
@@ -21,6 +24,11 @@ class UsersController < ApplicationController
 
     if @user.save
       cookies[:h_email] = { value: @user.email }
+
+      # post user email and referral code to papaya
+      uri = URI.parse("http://my.habit.com/referrals")
+      Net::HTTP.post_form(uri, {"code" => @user.referral_code, "sender" => @user.email})
+
       redirect_to '/refer-a-friend'
     else
       logger.info("Error saving user with email, #{email}")
