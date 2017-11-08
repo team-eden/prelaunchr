@@ -2,16 +2,8 @@
   REFER-A-FRIEND PAGE
 \*------------------------------------*/
 
-.wf-loading .brandon{
-  visibility: hidden;
-}
-
-.brandon{
-  font-family: "Brandon Grotesque", "brandon-grotesque", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-}
-
 #refer{
-  background: #FFF;
+  background: $white;
   .page-content {
     width: 1120px;
     margin: 0 auto;
@@ -19,130 +11,137 @@
     position: relative;
   }
   .header {
-    height: 50px;
+    height: 70px;
     background: $gray;
     width: 100%;
     overflow:hidden;
     z-index: 1;
     position: relative;
+    text-align: center;
     .content {
-      width: 315px;
+      display: inline-block;
+      height: 100%;
       margin: 0 auto;
-    }
-    p {
-      float: left;
-      color: #FFF;
-      font-weight: 500;
-      text-transform: uppercase;
-      line-height: 50px;
-    }
-    .byline {
-      font-size: 14px;
-    }
-    .logo{
-      font-weight: normal;
-      font-size: 0;
-      line-height: 0;
-      margin-right: 14px;
-      letter-spacing: 1px;
-      background: image-url("refer/logo.png") 0 0 no-repeat;
-      background-size: 106px 19px;
-      height: 19px;
-      width: 106px;
-      margin-top: 15px;
+      .habit-logo {
+        background: image-url("habit-logo.png") 0 0 no-repeat;
+        background-size: contain;
+        width: 96px;
+        height: 40px;
+        margin-right: 20px;
+      }
+      p {
+        float: left;
+        color: $white;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 50px;
+        font-size: 14px;
+      }
+      .header-content {
+        @include flex-vert;
+        height: 100%;
+        float: left;
+      }
     }
   }
   .hero{
-    background: #F1F0EE;
-    height: 391px;
+    @include flex-vert;
+    // background: #F1F0EE;
+    height: 600px;
     overflow: hidden;
-  }
-  .mammoth{
-    width: 612px;
-    height: 394px;
-    background: image-url("refer/mammoth.png") 0 0 no-repeat;
-    background-size: 610px 394px;
-    overflow: hidden;
-    margin-top: 15px;
-    float: left;
-    .need{
-      color: #FFF;
-      font-size: 38px;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin: 102px 0 0 72px;
-      display: block;
-      line-height: 56px;
-      letter-spacing: 4px;
-      text-align: center;
-      width: 284px;
-    }
-  }
-  .share-wrap{
-    float: right;
-    width: 400px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .13em;
-    margin-right: 60px;
-    .why{
-      font-size: 16px;
-      color: #555556;
-      font-weight: bold;
-      margin-top: 42px;
-    }
-    .title{
-      font-size: 30px;
-      line-height: 40px;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #074E6F;
-      margin-top: 18px;
-      letter-spacing: .13em;
-    }
-    .subtitle{
-      color: #565656;
-      font-size: 14px;
-      text-transform: none;
-      margin-top: 15px;
-    }
-    .copy-link{
-      border: 1px solid #D1D0C7;
-      background: #FFF;
-      padding: 10px 0;
-      width: 320px;
-      text-transform: none;
-      font-size: 11px;
-      margin: 20px auto 0;
-    }
-    .social-links{
-      width: 120px;
-      height: 37px;
-      margin: 25px auto 0;
-      text-align: center;
-      a, div {
-        display: inline-block;
+    background: image-url("refer/header-bg-desktop.jpg") 0 0 no-repeat;
+    background-size: cover;
+    .hero-headline-wrapper {
+      // border: 1px solid red;
+      width: 407px;
+      height: 407px;
+      h1 {
+        // display: block;
+        color: $gray;
+        font-size: 42px;
+        // text-transform: uppercase;
+        // font-weight: bold;
+        // margin: 102px 0 0 72px;
+        // display: block;
+        // line-height: 56px;
+        // letter-spacing: 4px;
+        // text-align: center;
+        // width: 284px;
+        &::after {
+          display: block;
+          position: relative;
+          content: '';
+          height: 4px;
+          width: 90px;
+          background-color: $gray;
+          // margin: 0;
+
+        }
       }
-      .fb{
-        background: image-url("refer/fb.png");
-        background-size: 27px 27px;
-        width: 27px;
-        height: 27px;
-      }
-      .twit{
-        background: image-url("refer/twit.png");
-        background-size: 27px 27px;
-        width: 27px;
-        height: 27px;
-      }
-      .sep{
-        height: 28px;
-        width: 1px;
-        background: #BAB9BA;
-        margin: 0 20px;
+      .share-wrapper {
+        // float: right;
+        // width: 400px;
+        // text-align: center;
+        // text-transform: uppercase;
+        // letter-spacing: .13em;
+        // margin-right: 60px;
+        p {
+          color: $gray;
+          font-size: 14px;
+          text-transform: none;
+          margin-top: 15px;
+        }
+        .copy-link {
+          background: $gray-lighter;
+          border: 1px solid $gray-medium;
+          width: 340px;
+          height: 40px;
+          line-height: 40px;
+          span {
+            color: $gray-lightest;
+            font-size: 20px;
+            margin-left: 10px;
+          }
+        }
+        .social-links{
+          // width: 120px;
+          // height: 37px;
+          // margin: 25px auto 0;
+          // text-align: center;
+          a, div {
+            display: inline-block;
+          }
+          .fb {
+            background: image-url("refer/fb.png");
+            background-size: 27px 27px;
+            width: 27px;
+            height: 27px;
+          }
+          .twit {
+            background: image-url("refer/twit.png");
+            background-size: 27px 27px;
+            width: 27px;
+            height: 27px;
+          }
+          .sep {
+            height: 30px;
+            width: 2px;
+            background: $gray-medium;
+            // margin: 0 20px;
+          }
+        }
       }
     }
   }
+  // .mammoth{
+  //   width: 612px;
+  //   height: 394px;
+  //   background: image-url("refer/mammoth.png") 0 0 no-repeat;
+  //   background-size: 610px 394px;
+  //   overflow: hidden;
+  //   margin-top: 15px;
+  //   float: left;
+  // }
   .prizes{
     width: 100%;
     background: #FFF;

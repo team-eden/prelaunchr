@@ -5,18 +5,29 @@
 /*------------------------------------*\
   COLORS
 \*------------------------------------*/
-$gray:            #44433D;
-
 $white:           #FFFFFF;
 $black:           #000000;
-$brown-gray:      #4A4A4A;
+$gray:            #44433D;
 $gray-lightest:   #CBCACA;
 $gray-lighter:    #F6F6F5;
-$gray-light:      #8B8581;
-$gray-semi-dark:  #3D3B36;
-$gray-dark:       #6E6762;
-$green:           #BCE183;
-$input-blur:      #C5C5C6;
+$gray-medium:     #979797;
+
+
+// $brown-gray:      #4A4A4A;
+//
+// $gray-light:      #8B8581;
+// $gray-semi-dark:  #3D3B36;
+// $gray-dark:       #6E6762;
+// $green:           #BCE183;
+// $input-blur:      #C5C5C6;
+
+/*------------------------------------*\
+  FONTS
+\*------------------------------------*/
+$book-font:   "CircularPro-Book", sans-serif;
+$bold-font:   "CircularPro-Bold", sans-serif;
+$medium-font: "CircularPro-Medium", sans-serif;
+$italic-font: "CircularPro-Italic", sans-serif;
 
 /*------------------------------------*\
   NAVBAR HEIGHTS
