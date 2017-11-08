@@ -2,6 +2,8 @@ require "net/http"
 require "uri"
 
 class UsersController < ApplicationController
+  include ApplicationHelper
+
   before_filter :skip_first_page, only: :new
   before_filter :handle_ip, only: :create
 
@@ -26,7 +28,7 @@ class UsersController < ApplicationController
       cookies[:h_email] = { value: @user.email }
 
       # post user email and referral code to papaya
-      uri = URI.parse("#{papaya_base_url}/referrals")
+      uri = URI.parse("#{papaya_url}/referrals")
       Net::HTTP.post_form(uri, {"code" => @user.referral_code, "sender" => @user.email})
 
       redirect_to '/refer-a-friend'
@@ -59,17 +61,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def papaya_base_url
-    case Rails.env
-    when "development"
-      "http://localhost:3000"
-    when "production"
-      "https://my.habit.com"
-    else
-      fail "missing papaya url for #{Rails.env}"
-    end
-  end
 
   def skip_first_page
     return if Rails.application.config.ended
