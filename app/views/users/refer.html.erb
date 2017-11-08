@@ -1,3 +1,4 @@
+<!-- Header -->
 <div class="header">
   <div class="content">
     <div class="header-content">
@@ -8,14 +9,12 @@
     </div>
   </div>
 </div>
-
+<!-- Hero -->
 <div class="hero">
   <div class="page-content clearfix">
     <div class="hero-headline-wrapper">
       <h1>Share Habit,<br>Get Rewarded</h1>
       <div class="share-wrapper">
-        <!-- <p class="why brandon">Don't leave your friends behind</p> -->
-        <!-- <p class="title brandon">INVITE FRIENDS &<br>Earn Product</p> -->
         <p>Share your unique link via email, Facebook<br>or Twitter and earn an Amazon eGift Card<br>each friend who purchases a Habit kit.</p>
         <div class="copy-link">
           <span><%= root_url %>?ref=<%= @user.referral_code %></span>
@@ -49,20 +48,24 @@
     end
   }
 %>
+
+<!-- Prizes -->
 <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
   <div class="page-content">
-    <p class="callout brandon">Here's How It Works:</p>
-    <ul class="products clearfix">
-      <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Harry's Product</p></li>
-      <% stops.each do |stop| %>
-        <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
-          <div class="circle"><%= stop["count"] %></div>
-          <div class="sep"></div>
-          <p><%= stop["html"].html_safe %></p>
+    <h2>How It Works</h2>
 
-          <div class="tooltip">
-            <img src="<%= stop["image"] %>" height="254">
-          </div>
+    <ul class="clearfix">
+
+      <li class="title">
+        <p class="progress-top">Friends Purchased</p>
+        <p class="progress-bottom"> &#36;&#36; Recieved</p>
+      </li>
+
+      <% stops.each do |stop| %>
+        <li class="product  <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
+          <div class="circle"><%= stop["count"] %></div>
+          <!-- <div class="sep"></div> -->
+          <p><%= stop["html"].html_safe %></p>
         </li>
       <% end %>
     </ul>
@@ -83,13 +86,11 @@
     %>
 
     <% if referrals_count == 0 %>
-      <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
+      <p class="place "><span>No</span> friends have purchased Habit.</p>
     <% else %>
-      <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
+      <p class="place "><span><%= referrals_count %></span> <%= words %> joined!</p>
     <% end %>
-    <p class="check brandon">Keep checking</p>
+    <p class="check">Keep checking</p>
 
-    <p class="ship brandon">We ship to the U.S. (& Canada Soon)</p>
-    <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
   </div>
 </div>
