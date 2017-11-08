@@ -5,12 +5,14 @@
 /*------------------------------------*\
   COLORS
 \*------------------------------------*/
-$white:           #FFFFFF;
-$black:           #000000;
-$gray:            #44433D;
-$gray-lightest:   #CBCACA;
-$gray-lighter:    #F6F6F5;
-$gray-medium:     #979797;
+$white:                 #FFFFFF;
+$black:                 #000000;
+$gray:                  #44433D;
+$gray-lightest:         #CBCACA;
+$gray-lightest-shadow:  rgba(203,202,202, 0.75);
+$gray-lighter:          #F6F6F5;
+$gray-medium:           #979797;
+$green:                 #BCE183;
 
 
 // $brown-gray:      #4A4A4A;
@@ -24,16 +26,16 @@ $gray-medium:     #979797;
 /*------------------------------------*\
   FONTS
 \*------------------------------------*/
-$book-font:   "CircularPro-Book", sans-serif;
-$bold-font:   "CircularPro-Bold", sans-serif;
-$medium-font: "CircularPro-Medium", sans-serif;
-$italic-font: "CircularPro-Italic", sans-serif;
+$book-font:         "CircularPro-Book", sans-serif;
+$book-bold-font:    "CircularPro-Bold", sans-serif;
+$book-medium-font:  "CircularPro-Medium", sans-serif;
+$book-italic-font:  "CircularPro-Italic", sans-serif;
 
 /*------------------------------------*\
   NAVBAR HEIGHTS
 \*------------------------------------*/
-$nav-height-xs: 70px;
-$nav-height-sm: 102px;
+$nav-height: 70px;
+// $nav-height-sm: 102px;
 
 /*------------------------------------*\
   SCREEN WIDTHS

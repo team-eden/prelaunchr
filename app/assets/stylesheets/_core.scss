@@ -16,221 +16,150 @@ form{
   visibility: hidden;
 }
 
-.brandon{
-  font-family: "Brandon Grotesque", "brandon-grotesque", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+
+html {
+	font-family: $book-font;
 }
-
-
+h1, h2 {
+	font-family: $book-bold-font;
+}
 /* Home */
 
-html.home{
-	background: #EDECEA;
-}
+// html.home{
+// 	background: #EDECEA;
+// }
 
-#home{
+#home {
 	padding-bottom: 50px;
+	.page-content{
+		width: 1400px;
+		margin: 0 auto;
+	}
+	.hero{
+		width: 100%;
+		height: 446px;
+		background: image-url("home/header-bg-desktop.jpg") center center no-repeat;
+		background-size: 1600px 446px;
+		overflow: hidden;
+		position: relative;
+		letter-spacing: .09em;
+		margin: 0 auto;
+		.large{
+			font-weight: bold;
+			font-size: 40px;
+			color: #074E6F;
+			text-transform: uppercase;
+			margin: 85px 0 0 136px;
+			position: relative;
+			z-index: 2;
+			letter-spacing: 2px;
+		}
+		.small{
+			font-weight: bold;
+			color: #955F5D;
+			font-size: 18px;
+			margin: 10px 0 0 115px;
+			line-height: 30px;
+			position: relative;
+			z-index: 2;
+			text-transform: uppercase;
+			text-align: center;
+			width: 375px;
+			letter-spacing: 1px;
+		}
+	}
+	.form-wrap{
+		height: 80px;
+		width: 411px;
+		margin: 23px auto 0;
+		&.ended {
+			width: 500px;
+			margin-top: 27px;
+			.thanks{
+				text-transform: uppercase;
+				font-weight: 500;
+				color: #074e6f;
+				text-align: center;
+				font-size: 22px;
+				letter-spacing: 1px;
+				line-height: 36px;
+				margin-bottom: 14px;
+			}
+			.compiling{
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-size: 14px;
+				line-height: 30px;
+				color: #555556;
+				text-align: center;
+				font-weight: 500;
+				margin-bottom: 24px;
+			}
+			.go-to{
+				font-style: italic;
+				font-size: 16px;
+				letter-spacing: 1px;
+				text-align: center;
+				margin-bottom: 25px;
+				a{
+					color: #074e6f;
+					font-size: 19px;
+					font-weight:bold;
+					text-transform: uppercase;
+					font-style: normal;
+					text-decoration: none;
+					&:hover {
+						color: #955F5D;
+					}
+				}
+			}
+			.again{
+				font-weight: 500;
+				color: #555556;
+				text-transform: uppercase;
+				font-size: 14px;
+				text-align: center;
+			}
+		}
+		.key{
+			width: 46px;
+			height: 19px;
+			margin: 0 auto;
+			background: image-url("home/key.png") 0 0 no-repeat;
+			background-size: 46px 19px;
+		}
+		.byline{
+			font-size: 15px;
+			text-transform: uppercase;
+			color: #074E6F;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: 2px;
+			margin: 15px 0;
+		}
+		.email{
+			float: left;
+			font-size: 13px;
+			padding: 8px 0 8px 10px;
+			border: 1px solid #074E6F;
+			width: 256px;
+			outline: none;
+			letter-spacing: 1px;
+		}
+		.submit{
+			width: 143px;
+			background: #074E6F;
+			float: left;
+			height: 37px;
+			line-height: 37px;
+			color: #FFF;
+			font-size: 13px;
+			text-transform: uppercase;
+			border: 0;
+			letter-spacing: 2px;
+		}
+	}
 }
-
-#home .page-content{
-	width: 1400px;
-	margin: 0 auto;
-}
-
-#home .hero{
-	width: 100%;
-	height: 446px;
-	background: image-url("home/header-bg-desktop.jpg") center center no-repeat;
-	background-size: 1600px 446px;
-	overflow: hidden;
-	position: relative;
-	letter-spacing: .09em;
-	margin: 0 auto;
-}
-
-#home .hero .large{
-	font-weight: bold;
-	font-size: 40px;
-	color: #074E6F;
-	text-transform: uppercase;
-	margin: 85px 0 0 136px;
-	position: relative;
-	z-index: 2;
-	letter-spacing: 2px;
-}
-
-#home .hero .small{
-	font-weight: bold;
-	color: #955F5D;
-	font-size: 18px;
-	margin: 10px 0 0 115px;
-	line-height: 30px;
-	position: relative;
-	z-index: 2;
-	text-transform: uppercase;
-	text-align: center;
-	width: 375px;
-	letter-spacing: 1px;
-}
-
-#home .form-wrap{
-	height: 80px;
-	width: 411px;
-	margin: 23px auto 0;
-}
-
-#home .form-wrap .key{
-	width: 46px;
-	height: 19px;
-	margin: 0 auto;
-	background: image-url("home/key.png") 0 0 no-repeat;
-	background-size: 46px 19px;
-}
-
-#home .form-wrap .byline{
-	font-size: 15px;
-	text-transform: uppercase;
-	color: #074E6F;
-	text-align: center;
-	font-weight: bold;
-	letter-spacing: 2px;
-	margin: 15px 0;
-}
-
-#home .form-wrap .email{
-	float: left;
-	font-size: 13px;
-	padding: 8px 0 8px 10px;
-	border: 1px solid #074E6F;
-	width: 256px;
-	outline: none;
-	letter-spacing: 1px;
-}
-
-#home .form-wrap .submit{
-	width: 143px;
-	background: #074E6F;
-	float: left;
-	height: 37px;
-	line-height: 37px;
-	color: #FFF;
-	font-size: 13px;
-	text-transform: uppercase;
-	border: 0;
-	letter-spacing: 2px;
-}
-
-#home .form-wrap.ended{
-	width: 500px;
-	margin-top: 27px;
-}
-
-#home .form-wrap.ended .thanks{
-	text-transform: uppercase;
-	font-weight: 500;
-	color: #074e6f;
-	text-align: center;
-	font-size: 22px;
-	letter-spacing: 1px;
-	line-height: 36px;
-	margin-bottom: 14px;
-}
-
-#home .form-wrap.ended .compiling{
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 14px;
-	line-height: 30px;
-	color: #555556;
-	text-align: center;
-	font-weight: 500;
-	margin-bottom: 24px;
-}
-
-#home .form-wrap.ended .go-to{
-	font-style: italic;
-	font-size: 16px;
-	letter-spacing: 1px;
-	text-align: center;
-	margin-bottom: 25px;
-}
-
-#home .form-wrap.ended .go-to a{
-	color: #074e6f;
-	font-size: 19px;
-	font-weight:bold;
-	text-transform: uppercase;
-	font-style: normal;
-	text-decoration: none;
-}
-
-#home .form-wrap.ended .go-to a:hover{
-	color: #955F5D;
-}
-
-#home .form-wrap.ended .again{
-	font-weight: 500;
-	color: #555556;
-	text-transform: uppercase;
-	font-size: 14px;
-	text-align: center;
-}
-
-#home .form-wrap.ended{
-	width: 500px;
-	margin-top: 27px;
-}
-
-#home .form-wrap.ended .thanks{
-	text-transform: uppercase;
-	font-weight: 500;
-	color: #074e6f;
-	text-align: center;
-	font-size: 22px;
-	letter-spacing: 1px;
-	line-height: 36px;
-	margin-bottom: 14px;
-}
-
-#home .form-wrap.ended .compiling{
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 14px;
-	line-height: 30px;
-	color: #555556;
-	text-align: center;
-	font-weight: 500;
-	margin-bottom: 24px;
-}
-
-#home .form-wrap.ended .go-to{
-	font-style: italic;
-	font-size: 16px;
-	letter-spacing: 1px;
-	text-align: center;
-	margin-bottom: 25px;
-}
-
-#home .form-wrap.ended .go-to a{
-	color: #074e6f;
-	font-size: 19px;
-	font-weight:bold;
-	text-transform: uppercase;
-	font-style: normal;
-	text-decoration: none;
-}
-
-#home .form-wrap.ended .go-to a:hover{
-	color: #955F5D;
-}
-
-#home .form-wrap.ended .again{
-	font-weight: 500;
-	color: #555556;
-	text-transform: uppercase;
-	font-size: 14px;
-	text-align: center;
-}
-
 
 /*
 	RETINA

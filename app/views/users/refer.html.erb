@@ -63,9 +63,9 @@
 
       <% stops.each do |stop| %>
         <li class="product  <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
-          <div class="circle"><%= stop["count"] %></div>
+          <div class="circle progress-top"><%= stop["count"] %></div>
           <!-- <div class="sep"></div> -->
-          <p><%= stop["html"].html_safe %></p>
+          <p class="progress-bottom"><%= stop["html"].html_safe %></p>
         </li>
       <% end %>
     </ul>
