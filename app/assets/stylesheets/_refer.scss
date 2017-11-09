@@ -5,35 +5,18 @@
 #refer{
   background: $white;
   .header {
-    height: $nav-height;
+    // height: $nav-height;
     background: $gray;
-    width: 100%;
-    overflow:hidden;
-    z-index: 1;
-    position: relative;
-    text-align: center;
-    .content {
-      display: inline-block;
-      height: 100%;
-      margin: 0 auto;
-      .habit-logo {
-        background: image-url("habit-logo.png") 0 0 no-repeat;
-        background-size: cover;
-        width: 96px;
-        height: 40px;
-        margin-right: 20px;
-      }
-      p {
-        float: left;
-        color: $white;
-        line-height: $nav-height;
-        font-size: 20px;
-      }
-      .header-content {
-        @include flex-vert;
-        height: 100%;
-        float: left;
-      }
+    .habit-logo {
+      width: 96px;
+      height: 40px;
+      margin-right: 20px;
+    }
+    p {
+      float: left;
+      color: $white;
+      line-height: $nav-height;
+      font-size: 20px;
     }
   }
   .hero{

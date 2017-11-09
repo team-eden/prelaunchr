@@ -25,39 +25,77 @@ h1, h2 {
   max-width: 1120px;
   margin: 0 auto;
   z-index: 0;
-  position: relative;
+  // position: relative;
 }
 
-.hero{
-  @include flex-vert;
-  height: 600px;
-  overflow: hidden;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  .hero-headline-wrapper {
-    width: 407px;
-    height: 407px;
-    h1 {
-      font-size: 42px;
-      &::after {
-        display: block;
-        position: relative;
-        content: '';
-        height: 4px;
-        width: 145px;
-        background-color: $gray;
-        margin: 45px 0 30px 0;
-      }
+.header {
+  height: $nav-height;
+  width: 100%;
+  overflow:hidden;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  .content {
+    display: inline-block;
+    height: 100%;
+    margin: 0 auto;
+    .habit-logo {
+      background: image-url("habit-logo.png") 0 0 no-repeat;
+      background-size: cover;
+      // width: 96px;
+      // height: 40px;
+      // margin-right: 20px;
     }
-    p {
-      font-size: 20px;
-      line-height: 27px;
-      margin-bottom: 35px;
+    .header-content {
+      @include flex-vert;
+      height: 100%;
+      float: left;
     }
   }
 }
 
+.hero{
+  @include flex-vert;
+  // height: 600px;
+  height: $hero-height-mobile;
+  overflow: hidden;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // .hero-headline-wrapper {
+  //   width: 407px;
+  //   height: 407px;
+  //   h1 {
+  //     font-size: 42px;
+  //     &::after {
+  //       display: block;
+  //       position: relative;
+  //       content: '';
+  //       height: 4px;
+  //       width: 145px;
+  //       background-color: $gray;
+  //       margin: 45px 0 30px 0;
+  //     }
+  //   }
+  //   p {
+  //     font-size: 20px;
+  //     line-height: 27px;
+  //     margin-bottom: 35px;
+  //   }
+  // }
+}
+
+@media only screen and (min-width: $tablet) {
+	.hero {
+		height: $hero-height-tablet;
+	}
+}
+
+@media only screen and (min-width: $desktop) {
+	.hero {
+		height: $hero-height-desktop;
+	}
+}
 // form{
 // 	margin-bottom: 0;
 // }
@@ -71,67 +109,4 @@ h1, h2 {
 
 // .wf-loading .brandon{
 //   visibility: hidden;
-// }
-
-/*
-	RETINA
-*/
-// @media only screen and (min--moz-device-pixel-ratio: 2),
-// only screen and (-o-min-device-pixel-ratio: 2/1),
-// only screen and (-webkit-min-device-pixel-ratio: 2),
-// only screen and (min-device-pixel-ratio: 2) {
-// 	#home .hero{
-// 		background: image-url("home/hero@2x.jpg") center center no-repeat;
-// 		background-size: 1600px 446px;
-// 	}
-
-// 	#home .form-wrap .key{
-// 		background: image-url("home/key@2x.png") 0 0 no-repeat;
-// 		background-size: 46px 19px;
-// 	}
-
-// 	#refer .header .logo{
-// 		background: image-url("refer/logo@2x.png") 0 0 no-repeat;
-// 		background-size: 106px 19px;
-// 	}
-
-// 	#refer .mammoth{
-// 		background: image-url("refer/mammoth@2x.png") 0 0 no-repeat;
-// 		background-size: 610px 394px;
-// 	}
-
-// 	#refer .share-wrap .social-links .fb{
-// 		background: image-url("refer/fb@2x.png");
-// 		background-size: 27px 27px;
-// 	}
-
-// 	#refer .share-wrap .social-links .twit{
-// 		background: image-url("refer/twit@2x.png");
-// 		background-size: 27px 27px;
-// 	}
-
-// 	#refer .prizes .progress{
-// 		background: image-url("refer/progress-bg@2x.png") 0 0 repeat-x;
-// 		background-size: 1px 4px;
-// 	}
-
-// 	#refer .prizes .progress .mover .bar{
-// 		background: image-url("refer/progress-done@2x.png") 0 0 repeat-x;
-// 		background-size: 1px 4px;
-// 	}
-
-// 	#refer .prizes .progress .mover .razor{
-// 		background: image-url("refer/razor@2x.png") 0 0 no-repeat;
-// 		background-size: 82px 23px;
-// 	}
-
-// 	#refer .prizes .products li.product .caret{
-// 		background: image-url("refer/caret@2x.png") center center no-repeat;
-// 		background-size: 16px 10px;
-// 	}
-
-// 	#refer .prizes .products li.product.selected .caret{
-// 		background: image-url("refer/caret-selected@2x.png") center center no-repeat;
-// 		background-size: 16px 10px;
-// 	}
 // }

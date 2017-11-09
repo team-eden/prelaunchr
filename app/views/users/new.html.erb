@@ -1,14 +1,14 @@
+<!-- Hero -->
 <div class="hero">
   <div class="page-content">
+    <%= render "users/habit_logo" %>
     <div class="hero-headline-wrapper">
       <h1>Invite Friends,<br>Get &#36;&#36;</h1>
       <p>Give a Friend &#36;25 Towards Their Habit Kit,<br>Get an Amazon eGift Card When They<br>Purchase OR Give &#36;25, Get an Amazon<br>eGift Card When a Friend Purchases</p>
     </div>
   </div>
-<!--   <p class="large brandon">Harry&#8217;s is live</p>
-  <p class="small brandon">Respecting the Face and Wallet<br>Since Like...Right Now.</p> -->
 </div>
-
+<!-- Email Form/CAMPAIGN ENDED -->
 <div class="form-wrapper <%= "ended" if Rails.application.config.ended %>">
   <% if Rails.application.config.ended %>
     <%= render "users/campaign_ended" %>
