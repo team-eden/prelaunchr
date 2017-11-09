@@ -1,6 +1,8 @@
 module ApplicationHelper
   def papaya_url
     case Rails.env
+    when "test"
+      "http://example.com"
     when "development"
       "http://localhost:3000"
     when "staging" # staging
