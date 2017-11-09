@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       redirect_to '/refer-a-friend'
     else
       logger.info("Error saving user with email, #{email}")
-      redirect_to root_path, alert: 'Something went wrong!'
+      redirect_to root_path, alert: 'Something went wrong!' + @user.errors.full_messages.join("\n")
     end
   end
 

@@ -14,15 +14,6 @@ $gray-lighter:          #F6F6F5;
 $gray-medium:           #979797;
 $green:                 #BCE183;
 
-
-// $brown-gray:      #4A4A4A;
-//
-// $gray-light:      #8B8581;
-// $gray-semi-dark:  #3D3B36;
-// $gray-dark:       #6E6762;
-// $green:           #BCE183;
-// $input-blur:      #C5C5C6;
-
 /*------------------------------------*\
   FONTS
 \*------------------------------------*/
@@ -35,7 +26,6 @@ $book-italic-font:  "CircularPro-Italic", sans-serif;
   NAVBAR HEIGHTS
 \*------------------------------------*/
 $nav-height: 70px;
-// $nav-height-sm: 102px;
 
 /*------------------------------------*\
   HERO IMAGE HEIGHTS
@@ -47,16 +37,7 @@ $hero-height-desktop:   600px;
 /*------------------------------------*\
   SCREEN WIDTHS
 \*------------------------------------*/
+$min-width: 320px;
 $mobile:    450px;
 $tablet:    768px;
 $desktop:   992px;
-// $max-inner-width-xs:    311px;
-
-// $max-inner-width-sm:    452px;
-// $screen-sm-min:         415px;
-// $screen-xs-max:         ($screen-sm-min - 1);
-// $screen-md-min:         992px;
-// $screen-sm-max:         ($screen-md-min - 1);
-// $screen-md-one-off:     470px;
-// $screen-lg-min:         1200px;
-// $screen-md-max:         ($screen-lg-min - 1);

@@ -7,14 +7,23 @@ html {
 	color: $gray;
 	// background-color: $white;
 	background-color: $gray-lighter;
+  min-width: $min-width;
 }
 
-textarea, input, button,
-textarea:focus, input:focus, button:focus, { outline: none; }
+a {
+	text-decoration: none;
+	color: inherit;
+	&:hover {
+		cursor: pointer;
+	}
+}
 
 h1, h2 {
 	font-family: $book-bold-font;
 }
+
+textarea, input, button,
+textarea:focus, input:focus, button:focus, { outline: none; }
 
 .clearfix:after {
   clear: both;
@@ -62,27 +71,27 @@ h1, h2 {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
-  // .hero-headline-wrapper {
-  //   width: 407px;
-  //   height: 407px;
-  //   h1 {
-  //     font-size: 42px;
-  //     &::after {
-  //       display: block;
-  //       position: relative;
-  //       content: '';
-  //       height: 4px;
-  //       width: 145px;
-  //       background-color: $gray;
-  //       margin: 45px 0 30px 0;
-  //     }
-  //   }
-  //   p {
-  //     font-size: 20px;
-  //     line-height: 27px;
-  //     margin-bottom: 35px;
-  //   }
-  // }
+  .hero-headline-wrapper {
+    width: 100%;
+    text-align: center;
+    h1 {
+      font-size: 35px;
+      &::after {
+        display: block;
+        position: relative;
+        content: '';
+        height: 4px;
+        width: 145px;
+        background-color: $gray;
+        margin: 20px auto 20px auto;
+      }
+    }
+    p {
+      font-size: 15px;
+      line-height: 27px;
+      margin-bottom: 25px;
+    }
+  }
 }
 
 @media only screen and (min-width: $tablet) {
@@ -94,19 +103,19 @@ h1, h2 {
 @media only screen and (min-width: $desktop) {
 	.hero {
 		height: $hero-height-desktop;
+    .hero-headline-wrapper {
+      text-align: left;
+      h1 {
+        font-size: 42px;
+        &::after {
+          margin: 45px 0 30px 0;
+        }
+      }
+      p {
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 35px;
+      }
+    }
 	}
 }
-// form{
-// 	margin-bottom: 0;
-// }
-
-// .clearfix:before,
-// .clearfix:after {
-//     content: " "; /* 1 */
-//     display: table; /* 2 */
-// }
-
-
-// .wf-loading .brandon{
-//   visibility: hidden;
-// }

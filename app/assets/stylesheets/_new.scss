@@ -2,9 +2,10 @@
   NEW PAGE
 \*------------------------------------*/
 
+// min-width: 0px
 #new {
   .hero{
-    background-image: url("home/header-bg-mobile.jpg");
+    background-image: url("new/header-bg-mobile.jpg");
     * { color: $white; }
     .logo-wrapper {
       position: relative;
@@ -16,37 +17,27 @@
        }
     }
     .hero-headline-wrapper {
-      width: 100%;
-      text-align: center;
       h1 {
-        font-size: 35px;
         &::after {
-          display: block;
-          position: relative;
-          content: '';
-          height: 4px;
-          width: 145px;
           background-color: $white;
-          margin: 20px auto 20px auto;
         }
-      }
-      p {
-        font-size: 16px;
-        line-height: 27px;
-        margin-bottom: 40px;
       }
     }
   }
   .form-wrapper {
     width: 80%;
     margin: 35px auto 60px;
-    h2, p {
+    h2, h3, p {
       text-align: center;
     }
     h2 {
       font-size: 20px;
       text-transform: uppercase;
       letter-spacing: 2px;
+    }
+    h3 {
+      color: red;
+      margin-bottom: 20px;
     }
     p {
       color: $gray-medium;
@@ -73,12 +64,20 @@
       }
     }
   }
+  .camp-end-wrapper {
+    h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      color: $gray;
+    }
+  }
 }
 
 @media only screen and (min-width: $tablet) {
   #new {
     .hero {
-      background-image: url("home/header-bg-tablet.jpg");
+      background-image: url("new/header-bg-tablet.jpg");
       .logo-wrapper {
         margin: 25px auto 30px auto;
         img {
@@ -122,28 +121,12 @@
 @media only screen and (min-width: $desktop) {
   #new {
     .hero {
-      background-image: url("home/header-bg-desktop.jpg");
+      background-image: url("new/header-bg-desktop.jpg");
       .logo-wrapper {
         position: absolute;
         top: 0px;
         left: 50%;
         margin-left: -50px;
-      }
-      .hero-headline-wrapper {
-        width: 407px;
-        height: 407px;
-        text-align: left;
-        h1 {
-          font-size: 42px;
-          &::after {
-            margin: 45px 0 30px 0;
-          }
-        }
-        p {
-          font-size: 20px;
-          line-height: 27px;
-          margin-bottom: 35px;
-        }
       }
     }
   }

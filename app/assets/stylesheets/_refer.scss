@@ -2,10 +2,10 @@
   REFER-A-FRIEND PAGE
 \*------------------------------------*/
 
+// min-width: 0px
 #refer{
   background: $white;
   .header {
-    // height: $nav-height;
     background: $gray;
     .habit-logo {
       width: 96px;
@@ -16,32 +16,38 @@
       float: left;
       color: $white;
       line-height: $nav-height;
-      font-size: 20px;
+      font-size: 15px;
     }
   }
   .hero{
-    background: image-url("refer/header-bg-desktop.jpg");
+    background-image: url("refer/header-bg-desktop.jpg");
+    display: block;
+    .hero-headline-wrapper {
+      margin-top: 20px;
+    }
     .share-wrapper {
       margin-bottom: 35px;
       .copy-link-wrapper {
-        width: 340px;
         .copy-link {
           background: $gray-lighter;
           border: 1px solid $gray-medium;
           height: 40px;
           line-height: 40px;
           overflow-x: scroll; // update this to somethign better
+          text-align: center;
           span {
             color: $gray-lightest;
             display: inline-block;
-            width: 150%; // update this to somethign better
+            white-space: nowrap;
+            // width: 150%; // update this to somethign better
             font-size: 18px;
             margin-left: 10px;
           }
         }
         .social-links{
           height: 37px;
-          margin: 40px auto 0;
+          // margin: 40px auto 0;
+          margin: 15px auto 0;
           text-align: center;
           a, div {
             display: inline-block;
@@ -151,3 +157,41 @@
   .prize-four .progress .mover .bar { width: 820px; }
   .prize-five .progress .mover .bar { width: 1120px; }
 }
+
+@media only screen and (min-width: $tablet) {
+  #refer {
+    .header {
+      p {
+        font-size: 20px;
+      }
+    }
+    .hero {
+      .hero-headline-wrapper {
+        margin-top: 10%;
+      }
+    }
+    .copy-link-wrapper {
+      max-width: 600px;
+      margin: 30px auto;
+      .copy-link {
+        margin: 0 auto 40px auto;
+        // text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  #refer {
+    .hero {
+      .copy-link-wrapper {
+        margin: 0;
+        width: 340px;
+        .copy-link {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
