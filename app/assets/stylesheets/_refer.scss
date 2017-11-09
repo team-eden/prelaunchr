@@ -4,12 +4,6 @@
 
 #refer{
   background: $white;
-  .page-content {
-    width: 1120px;
-    margin: 0 auto;
-    z-index: 0;
-    position: relative;
-  }
   .header {
     height: $nav-height;
     background: $gray;
@@ -24,7 +18,7 @@
       margin: 0 auto;
       .habit-logo {
         background: image-url("habit-logo.png") 0 0 no-repeat;
-        background-size: contain;
+        background-size: cover;
         width: 96px;
         height: 40px;
         margin-right: 20px;
@@ -32,8 +26,6 @@
       p {
         float: left;
         color: $white;
-        font-weight: 500;
-        text-transform: uppercase;
         line-height: $nav-height;
         font-size: 20px;
       }
@@ -45,71 +37,29 @@
     }
   }
   .hero{
-    @include flex-vert;
-    height: 600px;
-    overflow: hidden;
-    background: image-url("refer/header-bg-desktop.jpg") 0 0 no-repeat;
-    background-size: cover;
-    .hero-headline-wrapper {
-      // border: 1px solid red;
-      width: 407px;
-      height: 407px;
-      h1 {
-        // display: block;
-        color: $gray;
-        font-size: 42px;
-        // margin-bottom: 45px;
-        // text-transform: uppercase;
-        // font-weight: bold;
-        // margin: 102px 0 0 72px;
-        // display: block;
-        // line-height: 56px;
-        // letter-spacing: 4px;
-        // text-align: center;
-        // width: 284px;
-        &::after {
-          display: block;
-          position: relative;
-          content: '';
-          height: 4px;
-          width: 145px;
-          background-color: $gray;
-          margin: 45px 0 30px 0;
-
-        }
-      }
-      .share-wrapper {
-        margin-bottom: 35px;
-        // float: right;
-        // width: 400px;
-        // text-align: center;
-        // text-transform: uppercase;
-        // letter-spacing: .13em;
-        // margin-right: 60px;
-        p {
-          color: $gray;
-          font-size: 20px;
-          line-height: 27px;
-          text-transform: none;
-          // margin-top: 15px;
-        }
+    background: image-url("refer/header-bg-desktop.jpg");
+    .share-wrapper {
+      margin-bottom: 35px;
+      .copy-link-wrapper {
+        width: 340px;
         .copy-link {
           background: $gray-lighter;
           border: 1px solid $gray-medium;
-          width: 340px;
           height: 40px;
           line-height: 40px;
+          overflow-x: scroll; // update this to somethign better
           span {
             color: $gray-lightest;
-            font-size: 20px;
+            display: inline-block;
+            width: 150%; // update this to somethign better
+            font-size: 18px;
             margin-left: 10px;
           }
         }
         .social-links{
-          // width: 120px;
-          // height: 37px;
-          // margin: 25px auto 0;
-          // text-align: center;
+          height: 37px;
+          margin: 40px auto 0;
+          text-align: center;
           a, div {
             display: inline-block;
           }
@@ -128,7 +78,7 @@
             height: 30px;
             width: 2px;
             background: $gray-medium;
-            // margin: 0 20px;
+            margin: 0 20px;
           }
         }
       }
@@ -140,117 +90,77 @@
     padding-bottom: 100px;
     h2 {
       text-align: center;
-      // font-size: 16px;
-      // color: #074E6F;
-      // font-weight: bold;
-      // margin: 20px 0 0 0;
-      // letter-spacing: 2px;
-      // text-transform: uppercase;
+      font-size: 20px;
+      margin: 35px 0 0 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
-    .progress {
-      height: 9px;
-      width: 100%;
-      background: $gray-lightest;
-      border-radius: 4px;
-      position: absolute;
-      // top: 100px;
-      z-index: 0;
-      -webkit-box-shadow: 2px 2px 4px 0px $gray-lightest-shadow;
-      -moz-box-shadow:    2px 2px 4px 0px $gray-lightest-shadow;
-      box-shadow:         2px 2px 4px 0px $gray-lightest-shadow;
-      .mover{
-        position: absolute;
-        top: 0;
-        left: 0;
-        .bar {
-          border-radius: 4px;
-          background: $green;
-          width: 165px; // this width needs to be dynamic...  see below to add class...
-          height: 9px;
-        }
-      }
-    }
-    ul {
-      height: 105px;
-      width: 100%;
-      margin-top: 30px;
+    .progress-wrapper {
       position: relative;
-      z-index: 1;
-      li {
-        height: 100%;
-        float: left;
-        position: relative;
-        &.title {
-          // text-transform: uppercase;
-          // color: #074E6F;
-          // font-weight: 500;
-          // font-size: 14px;
-          // margin-right: 68px;
-          // width: 165px;
-          // font-weight: bold;
-        }
-        &.product{
-          // color: #074E6F;
-          // width: 125px;
-          // margin-right: 129px;
-          // position: relative;
-          &:last-child,
-          &.last {
-            margin-right: 0;
-          }
-          .circle {
-            height: 24px;
-            width: 24px;
-            line-height: 24px;
-            border-radius: 12px;
-            font-size: 16px;
-            border: 1px solid $green;
+      margin-top: 65px;
+      ul {
+        width: 100%;
+        z-index: 1;
+        li {
+          width: 20%;
+          float: left;
+          position: relative;
+          &.product{
             text-align: center;
-
-            color: $gray;
-            // overflow: hidden;
-            // background: #F1F0EE;
-            // font-weight: bold;
-            // margin: 0 auto;
+            .circle {
+              display: inline-block;
+              height: 24px;
+              width: 24px;
+              line-height: 24px;
+              border-radius: 12px;
+              font-size: 16px;
+              border: 1px solid $green;
+            }
+          }
+          .prize-data {
+            height: 50px;
+          }
+          .progress-bottom {
+            margin-top: 35px;
           }
           p {
-            // text-align: center;
-            // font-weight: 500;
-
+            letter-spacing: 2px;
+            font-weight: bold;
           }
         }
-        p {
-          letter-spacing: 2px;
-          font-weight: bold;
-        }
-        .progress-top {
-          border: 1px solid red;
-          // margin-top: 7px;
-        }
-        .progress-bottom {
-          border: 1px solid red;
-          // margin-top: 45px;
+      }
+      .progress {
+        height: 9px;
+        width: 100%;
+        background: $gray-lightest;
+        border-radius: 4px;
+        position: absolute;
+        top: 50px;
+        // margin-top: -5px;
+        z-index: 0;
+        -webkit-box-shadow: 2px 2px 4px 0px $gray-lightest-shadow;
+        -moz-box-shadow:    2px 2px 4px 0px $gray-lightest-shadow;
+        box-shadow:         2px 2px 4px 0px $gray-lightest-shadow;
+        .mover{
+          position: absolute;
+          top: 0;
+          left: 0;
+          .bar {
+            border-radius: 4px;
+            background: $green;
+            width: 165px; // this width needs to be dynamic...  see below to add class...
+            height: 9px;
+          }
         }
       }
     }
-    p.place{
-      text-align: center;
-      font-size: 16px;
-      color: #074E6F;
-      width: 100%;
-      font-weight: 500;
-      margin-top: 30px;
-      span{
-        color: #995F5E;
+    .count-wrapper {
+      margin-top: 45px;
+      p {
+        color: $gray-medium;
+        font-size: 16px;
+        text-align: center;
       }
-    }
-    p.check{
-      text-align: center;
-      font-size: 16px;
-      color: #858181;
-      width: 100%;
-      font-weight: 500;
-      margin-top: 5px;
     }
   }
   .prize-two .progress .mover .bar { width: 312px; }

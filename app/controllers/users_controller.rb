@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_filter :handle_ip, only: :create
 
   def new
-    @bodyId = 'home'
+    @bodyId = 'new'
     @is_mobile = mobile_device?
 
     @user = User.new
