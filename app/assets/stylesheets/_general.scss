@@ -5,8 +5,13 @@
 html {
 	font-family: $book-font;
 	color: $gray;
-	background-color: $white;
+	// background-color: $white;
+	background-color: $gray-lighter;
 }
+
+textarea, input, button,
+textarea:focus, input:focus, button:focus, { outline: none; }
+
 h1, h2 {
 	font-family: $book-bold-font;
 }

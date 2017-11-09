@@ -1,6 +1,7 @@
-<div class="key"></div>
-<p class="byline brandon">Be the first to know</p>
+<h2>Join the Program</h2>
 <%= form_for @user, :url => { :action => "create" } do |f| %>
-  <%= f.text_field :email, :placeholder => "Enter Email", :class => "email brandon" %>
-  <input class="submit brandon" name="commit" type="submit" value="Step Inside" />
+  <%= f.text_field :email, :placeholder => "Enter Email*", :class => "email" %>
+  <input class="submit" name="commit" type="submit" value="Start Earning" />
 <% end %>
+<div class="clearfix"></div>
+<p>&#42;Join with your existing Habit email address.</p>

@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  HOME PAGE
+  NEW PAGE
 \*------------------------------------*/
 
 #new {
@@ -10,95 +10,122 @@
       background-color: $white;
     }
   }
-  .form-wrap{
-    height: 80px;
-    width: 411px;
-    margin: 23px auto 0;
-    &.ended {
-      width: 500px;
-      margin-top: 27px;
-      .thanks{
-        text-transform: uppercase;
-        font-weight: 500;
-        color: #074e6f;
-        text-align: center;
-        font-size: 22px;
-        letter-spacing: 1px;
-        line-height: 36px;
-        margin-bottom: 14px;
-      }
-      .compiling{
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 14px;
-        line-height: 30px;
-        color: #555556;
-        text-align: center;
-        font-weight: 500;
-        margin-bottom: 24px;
-      }
-      .go-to{
-        font-style: italic;
-        font-size: 16px;
-        letter-spacing: 1px;
-        text-align: center;
-        margin-bottom: 25px;
-        a{
-          color: #074e6f;
-          font-size: 19px;
-          font-weight:bold;
-          text-transform: uppercase;
-          font-style: normal;
-          text-decoration: none;
-          &:hover {
-            color: #955F5D;
-          }
-        }
-      }
-      .again{
-        font-weight: 500;
-        color: #555556;
-        text-transform: uppercase;
-        font-size: 14px;
-        text-align: center;
-      }
-    }
-    .key{
-      width: 46px;
-      height: 19px;
-      margin: 0 auto;
-      background: image-url("home/key.png") 0 0 no-repeat;
-      background-size: 46px 19px;
-    }
-    .byline{
-      font-size: 15px;
-      text-transform: uppercase;
-      color: #074E6F;
+  .form-wrapper {
+    // height: 80px;
+    width: 602px;
+    margin: 35px auto 60px;
+    // border: 1px solid red;
+    h2, p {
       text-align: center;
-      font-weight: bold;
+    }
+    h2 {
+      font-size: 20px;
+      text-transform: uppercase;
       letter-spacing: 2px;
-      margin: 15px 0;
+    }
+    p {
+      color: $gray-medium;
+      font-size: 16px;
+    }
+    // &.ended {
+    //   width: 500px;
+    //   margin-top: 27px;
+    //   .thanks {
+    //     text-transform: uppercase;
+    //     font-weight: 500;
+    //     color: #074e6f;
+    //     text-align: center;
+    //     font-size: 22px;
+    //     letter-spacing: 1px;
+    //     line-height: 36px;
+    //     margin-bottom: 14px;
+    //   }
+    //   .compiling {
+    //     text-transform: uppercase;
+    //     letter-spacing: 1px;
+    //     font-size: 14px;
+    //     line-height: 30px;
+    //     color: #555556;
+    //     text-align: center;
+    //     font-weight: 500;
+    //     margin-bottom: 24px;
+    //   }
+    //   .go-to {
+    //     font-style: italic;
+    //     font-size: 16px;
+    //     letter-spacing: 1px;
+    //     text-align: center;
+    //     margin-bottom: 25px;
+    //     a{
+    //       color: #074e6f;
+    //       font-size: 19px;
+    //       font-weight:bold;
+    //       text-transform: uppercase;
+    //       font-style: normal;
+    //       text-decoration: none;
+    //       &:hover {
+    //         color: #955F5D;
+    //       }
+    //     }
+    //   }
+    //   .again {
+    //     font-weight: 500;
+    //     color: #555556;
+    //     text-transform: uppercase;
+    //     font-size: 14px;
+    //     text-align: center;
+    //   }
+    // }
+    form {
+      width: 600px;
+      height: 42px;
+      margin: 65px 0 35px 0;
     }
     .email{
+      @include placeholder-color($gray-lightest);
+      text-indent: 10px;
+      border: 1px solid $green;
+      width: 390px;
+      height: 38px;
       float: left;
-      font-size: 13px;
-      padding: 8px 0 8px 10px;
-      border: 1px solid #074E6F;
-      width: 256px;
-      outline: none;
-      letter-spacing: 1px;
+      font-size: 20px;
+
+      // &::-webkit-input-placeholder {
+      //   color: $gray-lightest;
+      // }
+      // &::-moz-placeholder {
+      //   color: $gray-lightest;
+      // }
+      // &:-ms-input-placeholder {
+      //   color: $gray-lightest;
+      // }
+      // &:-moz-placeholder {
+      //   color: $gray-lightest;
+      // }
+      // outline: none;
+      // font-size: 13px;
+      // padding: 8px 0 8px 10px;
+
+      // width: 256px;
+
+      // letter-spacing: 1px;
     }
     .submit{
-      width: 143px;
-      background: #074E6F;
+      // width: 143px;
+      width: 200px;
+      height: 40px;
+      background-color: $green;
       float: left;
-      height: 37px;
-      line-height: 37px;
-      color: #FFF;
-      font-size: 13px;
+      // height: 37px;
+      // line-height: 37px;
+      // color: #FFF;
+      // font-size: 13px;
       text-transform: uppercase;
       border: 0;
-      letter-spacing: 2px;
+      // letter-spacing: 2px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
