@@ -66,7 +66,7 @@ textarea:focus, input:focus, button:focus, { outline: none; }
 .hero{
   @include flex-vert;
   // height: 600px;
-  height: $hero-height-mobile;
+  // height: $hero-height-mobile;
   overflow: hidden;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -96,13 +96,13 @@ textarea:focus, input:focus, button:focus, { outline: none; }
 
 @media only screen and (min-width: $tablet) {
 	.hero {
-		height: $hero-height-tablet;
+		// height: $hero-height-tablet;
 	}
 }
 
 @media only screen and (min-width: $desktop) {
 	.hero {
-		height: $hero-height-desktop;
+		// height: $hero-height-desktop;
     .hero-headline-wrapper {
       text-align: left;
       h1 {

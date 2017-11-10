@@ -22,6 +22,10 @@
           background-color: $white;
         }
       }
+      p {
+        line-height: 20px;
+        margin-bottom: 50px;
+      }
     }
   }
   .form-wrapper {
@@ -91,7 +95,7 @@
         }
         p {
           font-size: 20px;
-          margin-bottom: 35px;
+          line-height: 27px;
         }
       }
     }
@@ -122,11 +126,10 @@
   #new {
     .hero {
       background-image: url("new/header-bg-desktop.jpg");
-      .logo-wrapper {
-        position: absolute;
-        top: 0px;
-        left: 50%;
-        margin-left: -50px;
+      .hero-headline-wrapper {
+        p {
+          margin-bottom: 70px;
+        }
       }
     }
   }
