@@ -1,0 +1,11 @@
+$size: 24px;
+
+.social-share-button {
+   a:first-child {
+    padding-right: 20px;
+    border-right: 2px solid $gray-medium;
+  }
+   a:last-child {
+     padding-left: 20px;
+   }
+}

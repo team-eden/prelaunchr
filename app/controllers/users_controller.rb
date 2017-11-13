@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   before_filter :skip_first_page, only: :new
   before_filter :handle_ip, only: :create
 
+  helper_method :social_callback_url
+  helper_method :referral_link
+
   def new
     @bodyId = 'new'
     @is_mobile = mobile_device?
@@ -22,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(email: email)
     @user.referrer = User.find_by_referral_code(ref_code) if ref_code
 
-    if @user.save
+    if @user.save!
       cookies[:h_email] = { value: @user.email }
 
       # post user email and referral code to papaya
@@ -41,6 +44,8 @@ class UsersController < ApplicationController
     @is_mobile = mobile_device?
 
     @user = User.find_by_email(cookies[:h_email])
+    @facebook_share_message = generate_facebook_share_message @user.referral_code
+    @twitter_share_message = generate_twitter_share_message @user.referral_code
 
     respond_to do |format|
       if @user.nil?
@@ -59,6 +64,29 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def referral_link(referral_code)
+    "#{social_callback_url}?ref=#{CGI::escape(referral_code)}"
+  end
+
+  def generate_facebook_share_message(referral_code)
+     "Thanks to Habit, Im following a nutrition plan tailor- made for me. Get $25 off at checkout with code #{referral_code} to get yours. Shop here #{referral_link(referral_code)}"
+  end
+
+  def generate_twitter_share_message(referral_code)
+    "Thanks to Habit, I\'m following a nutrition plan tailor- made for me. Get $25 off at checkout with code #{referral_code} to get yours. Shop here"
+  end
+
+  def social_callback_url
+    case Rails.env
+    when "development"
+      "http://lvh.me:5000/"
+    when "production"
+      root_url
+    else
+      fail "missing papaya url for #{Rails.env}"
+    end
+  end
 
   def papaya_base_url
     case Rails.env

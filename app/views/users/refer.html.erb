@@ -26,9 +26,12 @@
           </div>
           <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
           <div class="social-links">
-            <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
-            <div class="sep"></div>
-            <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
+            <%= social_share_button_tag(@facebook_share_message,
+                                        :url => referral_link(@user.referral_code),
+                                        :desc => @facebook_share_message,
+                                        :'data-twitter-title' => @twitter_share_message,
+                                        :'data-facebook-title' => @facebook_share_message
+            ) %>
           </div>
         </div>
       </div>
