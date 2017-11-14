@@ -21,6 +21,7 @@ web.main:
     rails: 'log/production.log'
 
 deploy.config:
-  transform:
+  extra_steps:
     - rake assets:precompile RAILS_ENV=production
+  transform:
     - rake db:setup_or_migrate
