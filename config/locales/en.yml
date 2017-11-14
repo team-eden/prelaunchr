@@ -2,4 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  amazon_policies:
+    section_1: "Block 1 of text"
+    section_2: "Block 2 of text"
+  homepage:
+    header: "Habit Referral Program"
+    subheader: "Give a friend $25 towards their Habit Kit, Get an Amazon eGift Card when they purchase"
+    email_form_subtext: "*Join with your existing Habit profile email address"
+    submit_email_text: "Start Earning"
+    

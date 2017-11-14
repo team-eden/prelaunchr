@@ -1,0 +1,213 @@
+/*------------------------------------*\
+  REFER-A-FRIEND PAGE
+\*------------------------------------*/
+
+// min-width: 0px
+#refer{
+  background: $white;
+  .header {
+    background: $gray;
+    .habit-logo {
+      width: 96px;
+      height: 40px;
+      margin-right: 20px;
+    }
+    p {
+      float: left;
+      color: $white;
+      line-height: $nav-height;
+      font-size: 15px;
+    }
+  }
+  .hero{
+    background-image: url("refer/header-bg-desktop.jpg");
+    display: block;
+    .hero-headline-wrapper {
+      margin-top: 20px;
+    }
+    .share-wrapper {
+      margin-bottom: 35px;
+      .copy-link-wrapper {
+        .copy-link {
+          background: $gray-lighter;
+          border: 1px solid $gray-medium;
+          height: 40px;
+          line-height: 40px;
+          overflow-x: scroll; // update this to somethign better
+          text-align: center;
+          span {
+            color: $gray-lightest;
+            display: inline-block;
+            white-space: nowrap;
+            // width: 150%; // update this to somethign better
+            font-size: 18px;
+            margin-left: 10px;
+          }
+        }
+        .social-links{
+          height: 37px;
+          // margin: 40px auto 0;
+          margin: 15px auto 0;
+          text-align: center;
+          a, div {
+            display: inline-block;
+          }
+          a {
+            background-size: 27px 27px;
+            width: 27px;
+            height: 27px;
+          }
+          .fb {
+            background: image-url("refer/fb.png");
+          }
+          .twit {
+            background: image-url("refer/twit.png");
+          }
+          .sep {
+            height: 30px;
+            width: 2px;
+            background: $gray-medium;
+            margin: 0 20px;
+          }
+        }
+      }
+    }
+  }
+  .prizes{
+    width: 100%;
+    background: #FFF;
+    padding-bottom: 100px;
+    h2 {
+      text-align: center;
+      font-size: 20px;
+      margin: 35px 0 0 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .progress-wrapper {
+      position: relative;
+      margin-top: 65px;
+      ul {
+        width: 100%;
+        z-index: 1;
+        li {
+          width: 20%;
+          float: left;
+          position: relative;
+          &.product{
+            text-align: center;
+            .circle {
+              display: inline-block;
+              height: 24px;
+              width: 24px;
+              line-height: 24px;
+              border-radius: 12px;
+              font-size: 16px;
+              border: 1px solid $green;
+            }
+          }
+          .prize-data {
+            height: 50px;
+          }
+          .progress-bottom {
+            margin-top: 35px;
+          }
+          p {
+            letter-spacing: 2px;
+            font-weight: bold;
+          }
+        }
+      }
+      .progress {
+        height: 9px;
+        width: 100%;
+        background: $gray-lightest;
+        border-radius: 4px;
+        position: absolute;
+        top: 50px;
+        // margin-top: -5px;
+        z-index: 0;
+        -webkit-box-shadow: 2px 2px 4px 0px $gray-lightest-shadow;
+        -moz-box-shadow:    2px 2px 4px 0px $gray-lightest-shadow;
+        box-shadow:         2px 2px 4px 0px $gray-lightest-shadow;
+        .mover{
+          position: absolute;
+          top: 0;
+          left: 0;
+          .bar {
+            border-radius: 4px;
+            background: $green;
+            width: 165px; // this width needs to be dynamic...  see below to add class...
+            height: 9px;
+          }
+        }
+      }
+    }
+    .count-wrapper {
+      margin-top: 45px;
+      p {
+        color: $gray-medium;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+    .terms {
+      margin-top: 45px;
+      p {
+        color: $gray-medium;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+    .amazon-footer {
+      margin-top: 45px;
+      p {
+        color: $gray-medium;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+  .prize-two .progress .mover .bar { width: 312px; }
+  .prize-three .progress .mover .bar { width: 566px; }
+  .prize-four .progress .mover .bar { width: 820px; }
+  .prize-five .progress .mover .bar { width: 1120px; }
+}
+
+@media only screen and (min-width: $tablet) {
+  #refer {
+    .header {
+      p {
+        font-size: 20px;
+      }
+    }
+    .hero {
+      .hero-headline-wrapper {
+        margin-top: 10%;
+      }
+    }
+    .copy-link-wrapper {
+      max-width: 600px;
+      margin: 30px auto;
+      .copy-link {
+        margin: 0 auto 40px auto;
+        // text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  #refer {
+    .hero {
+      .copy-link-wrapper {
+        margin: 0;
+        width: 340px;
+        .copy-link {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+

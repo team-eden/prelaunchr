@@ -7,8 +7,11 @@ class UsersController < ApplicationController
   before_filter :skip_first_page, only: :new
   before_filter :handle_ip, only: :create
 
+  helper_method :social_callback_url
+  helper_method :referral_link
+
   def new
-    @bodyId = 'home'
+    @bodyId = 'new'
     @is_mobile = mobile_device?
 
     @user = User.new
@@ -24,7 +27,7 @@ class UsersController < ApplicationController
     @user = User.new(email: email)
     @user.referrer = User.find_by_referral_code(ref_code) if ref_code
 
-    if @user.save
+    if @user.save!
       cookies[:h_email] = { value: @user.email }
 
       # post user email and referral code to papaya
@@ -34,7 +37,7 @@ class UsersController < ApplicationController
       redirect_to '/refer-a-friend'
     else
       logger.info("Error saving user with email, #{email}")
-      redirect_to root_path, alert: 'Something went wrong!'
+      redirect_to root_path, alert: 'Something went wrong!' + @user.errors.full_messages.join("\n")
     end
   end
 
@@ -48,6 +51,9 @@ class UsersController < ApplicationController
       if @user.nil?
         format.html { redirect_to root_path, alert: 'Something went wrong!' }
       else
+        @facebook_share_message = generate_facebook_share_message @user.referral_code
+        @twitter_share_message = generate_twitter_share_message @user.referral_code
+
         format.html # refer.html.erb
       end
     end
@@ -61,6 +67,40 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def referral_link(referral_code)
+    "#{social_callback_url}?ref=#{CGI::escape(referral_code)}"
+  end
+
+  def generate_facebook_share_message(referral_code)
+     "Thanks to Habit, Im following a nutrition plan tailor- made for me. Get $25 off at checkout with code #{referral_code} to get yours. Shop here #{referral_link(referral_code)}"
+  end
+
+  def generate_twitter_share_message(referral_code)
+    "Thanks to Habit, I\'m following a nutrition plan tailor- made for me. Get $25 off at checkout with code #{referral_code} to get yours. Shop here"
+  end
+
+  def social_callback_url
+    case Rails.env
+    when "development"
+      "http://lvh.me:5000/"
+    when "production"
+      root_url
+    else
+      fail "missing papaya url for #{Rails.env}"
+    end
+  end
+
+  def papaya_base_url
+    case Rails.env
+    when "development"
+      "http://localhost:3000"
+    when "production"
+      "https://my.habit.com"
+    else
+      fail "missing papaya url for #{Rails.env}"
+    end
+  end
 
   def skip_first_page
     return if Rails.application.config.ended

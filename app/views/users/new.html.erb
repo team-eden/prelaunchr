@@ -1,9 +1,15 @@
+<!-- Hero -->
 <div class="hero">
-  <p class="large brandon">Harry&#8217;s is live</p>
-  <p class="small brandon">Respecting the Face and Wallet<br>Since Like...Right Now.</p>
+  <div class="page-content">
+    <%= render "users/habit_logo" %>
+    <div class="hero-headline-wrapper">
+      <h1><%= I18n.t('homepage.header') %></h1>
+      <p><%= I18n.t('homepage.subheader') %></p>
+    </div>
+  </div>
 </div>
-
-<div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
+<!-- Email Form/CAMPAIGN ENDED -->
+<div class="form-wrapper <%= "ended" if Rails.application.config.ended %>">
   <% if Rails.application.config.ended %>
     <%= render "users/campaign_ended" %>
   <% else %>

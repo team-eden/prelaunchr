@@ -1,6 +1,8 @@
-<div class="key"></div>
-<p class="byline brandon">Be the first to know</p>
+<h2>Join the Program</h2>
 <%= form_for @user, :url => { :action => "create" } do |f| %>
-  <%= f.text_field :email, :placeholder => "Enter Email", :class => "email brandon" %>
-  <input class="submit brandon" name="commit" type="submit" value="Step Inside" />
+  <%= f.text_field :email, :placeholder => "Enter Email*", :class => "email" %>
+  <%= f.submit I18n.t('homepage.submit_email_text'), class: "submit" %>
 <% end %>
+<div class="clearfix"></div>
+<!-- <h3><%= flash[:alert] %></h3> -->
+<p><%= I18n.t('homepage.email_form_subtext') %></p>

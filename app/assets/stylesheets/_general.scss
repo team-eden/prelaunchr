@@ -1,0 +1,121 @@
+/*------------------------------------*\
+  GENERAL
+\*------------------------------------*/
+
+html {
+	font-family: $book-font;
+	color: $gray;
+	// background-color: $white;
+	background-color: $gray-lighter;
+  min-width: $min-width;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+h1, h2 {
+	font-family: $book-bold-font;
+}
+
+textarea, input, button,
+textarea:focus, input:focus, button:focus, { outline: none; }
+
+.clearfix:after {
+  clear: both;
+}
+
+.page-content {
+  width: 80%;
+  max-width: 1120px;
+  margin: 0 auto;
+  z-index: 0;
+  // position: relative;
+}
+
+.header {
+  height: $nav-height;
+  width: 100%;
+  overflow:hidden;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  .content {
+    display: inline-block;
+    height: 100%;
+    margin: 0 auto;
+    .habit-logo {
+      background: image-url("habit-logo.png") 0 0 no-repeat;
+      background-size: cover;
+      // width: 96px;
+      // height: 40px;
+      // margin-right: 20px;
+    }
+    .header-content {
+      @include flex-vert;
+      height: 100%;
+      float: left;
+    }
+  }
+}
+
+.hero{
+  @include flex-vert;
+  // height: 600px;
+  // height: $hero-height-mobile;
+  overflow: hidden;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .hero-headline-wrapper {
+    width: 100%;
+    text-align: center;
+    h1 {
+      font-size: 35px;
+      &::after {
+        display: block;
+        position: relative;
+        content: '';
+        height: 4px;
+        width: 145px;
+        background-color: $gray;
+        margin: 20px auto 20px auto;
+      }
+    }
+    p {
+      font-size: 15px;
+      line-height: 27px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+	.hero {
+		// height: $hero-height-tablet;
+	}
+}
+
+@media only screen and (min-width: $desktop) {
+	.hero {
+		// height: $hero-height-desktop;
+    .hero-headline-wrapper {
+      text-align: left;
+      h1 {
+        font-size: 42px;
+        &::after {
+          margin: 45px 0 30px 0;
+        }
+      }
+      p {
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 35px;
+      }
+    }
+	}
+}

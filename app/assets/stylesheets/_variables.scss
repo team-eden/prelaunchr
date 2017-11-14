@@ -1,0 +1,43 @@
+/*------------------------------------*\
+  VARIABLES
+\*------------------------------------*/
+
+/*------------------------------------*\
+  COLORS
+\*------------------------------------*/
+$white:                 #FFFFFF;
+$black:                 #000000;
+$gray:                  #44433D;
+$gray-lightest:         #CBCACA;
+$gray-lightest-shadow:  rgba(203,202,202, 0.75);
+$gray-lighter:          #F6F6F5;
+$gray-medium:           #979797;
+$green:                 #BCE183;
+
+/*------------------------------------*\
+  FONTS
+\*------------------------------------*/
+$book-font:         "CircularPro-Book", sans-serif;
+$book-bold-font:    "CircularPro-Bold", sans-serif;
+$book-medium-font:  "CircularPro-Medium", sans-serif;
+$book-italic-font:  "CircularPro-Italic", sans-serif;
+
+/*------------------------------------*\
+  NAVBAR HEIGHTS
+\*------------------------------------*/
+$nav-height: 70px;
+
+/*------------------------------------*\
+  HERO IMAGE HEIGHTS
+\*------------------------------------*/
+$hero-height-mobile:    375px;
+$hero-height-tablet:    500px;
+$hero-height-desktop:   600px;
+
+/*------------------------------------*\
+  SCREEN WIDTHS
+\*------------------------------------*/
+$min-width: 320px;
+$mobile:    450px;
+$tablet:    768px;
+$desktop:   992px;
