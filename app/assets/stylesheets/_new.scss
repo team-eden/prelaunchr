@@ -5,7 +5,7 @@
 // min-width: 0px
 #new {
   .hero{
-    background-image: url("new/header-bg-mobile.jpg");
+    background-image: image-url("new/header-bg-mobile.jpg");
     * { color: $white; }
     .logo-wrapper {
       position: relative;
@@ -83,7 +83,7 @@
 @media only screen and (min-width: $tablet) {
   #new {
     .hero {
-      background-image: url("new/header-bg-tablet.jpg");
+      background-image: image-url("new/header-bg-tablet.jpg");
       .logo-wrapper {
         margin: 25px auto 30px auto;
         img {
@@ -127,7 +127,7 @@
 @media only screen and (min-width: $desktop) {
   #new {
     .hero {
-      background-image: url("new/header-bg-desktop.jpg");
+      background-image: image-url("new/header-bg-desktop.jpg");
       .hero-headline-wrapper {
         width: 325px;
         p {
