@@ -42,6 +42,7 @@ end
 # gem 'capistrano'
 
 group :production do
+  gem 'puma', '~> 3.0'
   gem 'rails_12factor'
   gem 'rails_serve_static_assets'
 end

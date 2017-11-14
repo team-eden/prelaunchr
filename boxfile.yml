@@ -1,5 +1,26 @@
 run.config:
   engine: ruby
+  # add nginx package
+  extra_packages:
+    - nodejs
+    - nginx
 
 data.db:
   image: nanobox/postgresql:9.5
+
+web.main:
+  start:
+    nginx: nginx -c /app/config/nginx.conf
+    puma: bundle exec puma -C /app/config/puma.rb
+  # add writable dirs to your web component
+  writable_dirs:
+    - tmp
+    - log
+  # the path to a logfile you want streamed to the nanobox dashboard
+  log_watch:
+    rails: 'log/production.log'
+
+deploy.config:
+  transform:
+    - rake assets:precompile RAILS_ENV=production
+    - rake db:setup_or_migrate
