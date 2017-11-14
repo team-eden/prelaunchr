@@ -96,7 +96,7 @@ class UsersController < ApplicationController
     when "development"
       "http://localhost:3000"
     when "production"
-      "https://my.habit.com"
+      "https://myacceptance.habit.com"
     else
       fail "missing papaya url for #{Rails.env}"
     end
