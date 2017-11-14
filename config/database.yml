@@ -1,8 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  host: <%= ENV['DATA_DB_HOST'] %>
+  username: <%= ENV['DATA_DB_USER'] %>
+  password: <%= ENV['DATA_DB_PASS'] %>
+
 development:
-  adapter: postgresql
-  database: prelaunchr_development
-  host: localhost
+  <<: *default
+  database: development
+
 test:
-  adapter: postgresql
-  database: prelaunchr_test
-  host: localhost
+  <<: *default
+  database: test
+
+production:
+  <<: *default
+  database: production
