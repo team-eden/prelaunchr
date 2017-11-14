@@ -65,22 +65,21 @@
       <ul class="clearfix">
         <li class="title">
           <div class="prize-data">
-            <p>Friends Purchased</p>
+            <p>FRIENDS PURCHASED</p>
           </div>
           <div class="progress-bottom prize-data">
-            <p> &#36;&#36; Recieved</p>
+            <p> &#36;&#36; RECIEVED</p>
           </div>
         </li>
 
         <% stops.each do |stop| %>
           <li class="product  <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
             <div class="prize-data">
-              <div class="circle"><%= stop["count"] %></div>
+              <div class="circle"><%= stop["count_label"] %></div>
             </div>
             <div class="progress-bottom prize-data">
               <p><%= stop["html"].html_safe %></p>
             </div>
-
           </li>
         <% end %>
       </ul>
