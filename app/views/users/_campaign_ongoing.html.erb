@@ -1,7 +1,7 @@
 <h2>Join the Program</h2>
 <%= form_for @user, :url => { :action => "create" } do |f| %>
   <%= f.text_field :email, :placeholder => "Enter Email*", :class => "email" %>
-  <input class="submit" name="commit" type="submit" value="Start Earning" />
+  <%= f.submit I18n.t('homepage.submit_email_text'), class: "submit" %>
 <% end %>
 <div class="clearfix"></div>
 <!-- <h3><%= flash[:alert] %></h3> -->
