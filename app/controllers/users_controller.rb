@@ -44,13 +44,14 @@ class UsersController < ApplicationController
     @is_mobile = mobile_device?
 
     @user = User.find_by_email(cookies[:h_email])
-    @facebook_share_message = generate_facebook_share_message @user.referral_code
-    @twitter_share_message = generate_twitter_share_message @user.referral_code
 
     respond_to do |format|
       if @user.nil?
         format.html { redirect_to root_path, alert: 'Something went wrong!' }
       else
+        @facebook_share_message = generate_facebook_share_message @user.referral_code
+        @twitter_share_message = generate_twitter_share_message @user.referral_code
+
         format.html # refer.html.erb
       end
     end
