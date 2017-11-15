@@ -16,23 +16,27 @@ class User < ActiveRecord::Base
   REFERRAL_STEPS = [
     {
       'count' => 1,
-      'html' => '$50 Earned',
-      'class' => 'two'
+      'html' => '$25 Earned',
+      'class' => 'two',
+      'count_label' => '1'
     },
     {
       'count' => 2,
-      'html' => '$150 Earned',
-      'class' => 'three'
+      'html' => '$50 Earned',
+      'class' => 'three',
+      'count_label' => '2'
     },
     {
       'count' => 3,
-      'html' => '$300 Earned',
-      'class' => 'four'
+      'html' => '$75 Earned',
+      'class' => 'four',
+      'count_label' => '3'
     },
     {
       'count' => 4,
-      'html' => '$$????',
-      'class' => 'five'
+      'html' => '<p class="last_amount">$100 Earned<span class="subtext">$25 earned for each additional referral</span></p>',
+      'class' => 'five',
+      'count_label' => '4+',
     }
   ]
 

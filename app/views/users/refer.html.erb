@@ -15,7 +15,7 @@
     <!-- <div class=""> -->
       <div class="hero-headline-wrapper">
         <h1>Share Habit,<br>Get Rewarded</h1>
-        <p>Share your unique link via email, Facebook<br>or Twitter and earn an Amazon eGift Card<br>each friend who purchases a Habit kit.</p>
+        <p style="width:428px">Share your unique promo code <%= @user.referral_code %> and the link below via email, Facebook or Twitter and earn a $25 Amazon eGift Card* for each friend who purchases a Habit kit.</p>
       </div>
     <!-- </div> -->
       <div class="share-wrapper">
@@ -65,22 +65,21 @@
       <ul class="clearfix">
         <li class="title">
           <div class="prize-data">
-            <p>Friends Purchased</p>
+            <p>FRIENDS PURCHASED</p>
           </div>
           <div class="progress-bottom prize-data">
-            <p> &#36;&#36; Recieved</p>
+            <p> &#36;&#36; RECIEVED</p>
           </div>
         </li>
 
         <% stops.each do |stop| %>
           <li class="product  <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
             <div class="prize-data">
-              <div class="circle"><%= stop["count"] %></div>
+              <div class="circle"><%= stop["count_label"] %></div>
             </div>
             <div class="progress-bottom prize-data">
               <p><%= stop["html"].html_safe %></p>
             </div>
-
           </li>
         <% end %>
       </ul>
@@ -90,6 +89,7 @@
           <div class="bar clearfix"></div>
         </div>
       </div>
+
     </div>
 
     <%
