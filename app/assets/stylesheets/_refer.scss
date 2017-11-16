@@ -103,6 +103,7 @@
       @media only screen and (max-width: $mobile) {
         display: flex;
         justify-content:center;
+        margin-top: 30px;
 
         .product {
           display: flex;
@@ -117,7 +118,16 @@
         .progress-bar-wrapper .progress-bar {
           background: $green;
           width: 9px;
+          -webkit-box-shadow: 2px 2px 4px 0px $gray-lightest-shadow;
+          -moz-box-shadow:    2px 2px 4px 0px $gray-lightest-shadow;
+          box-shadow:         2px 2px 4px 0px $gray-lightest-shadow;
         }
+
+        .progress-bar-wrapper .progress-bar.grayed {
+          background: $gray-lightest;
+        }
+
+
 
         .progress-bar-wrapper .progress-bar.first {
           border-top-left-radius: 3px;
