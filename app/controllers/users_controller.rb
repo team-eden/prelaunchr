@@ -27,17 +27,22 @@ class UsersController < ApplicationController
     @user = User.new(email: email)
     @user.referrer = User.find_by_referral_code(ref_code) if ref_code
 
-    if @user.save!
+    if @user.save
       cookies[:h_email] = { value: @user.email }
 
       # post user email and referral code to papaya
-      uri = URI.parse("#{papaya_url}/referrals")
-      Net::HTTP.post_form(uri, {"code" => @user.referral_code, "sender" => @user.email})
+      begin
+        uri = URI.parse("#{papaya_url}/referrals")
+        Net::HTTP.post_form(uri, {"code" => @user.referral_code, "sender" => @user.email})
+      rescue StandardError => e
+        logger.info("Error saving user with email, #{email}")
+        redirect_to root_path, alert: 'Something went wrong! ' + e.message
+      end
 
       redirect_to '/refer-a-friend'
     else
       logger.info("Error saving user with email, #{email}")
-      redirect_to root_path, alert: 'Something went wrong!' + @user.errors.full_messages.join("\n")
+      redirect_to root_path, alert: 'Something went wrong! ' + @user.errors.full_messages.join("\n")
     end
   end
 
