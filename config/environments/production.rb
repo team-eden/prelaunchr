@@ -62,10 +62,10 @@ Prelaunchr::Application.configure do
 
   config.action_mailer.default_url_options = { :host => ENV['SMTP_DOMAIN'] }
   config.action_mailer.smtp_settings = {
-    address:              ENV.fetch('SMTP_ADDRESS'),
+    address:              ENV.fetch('SMTP_ADDRESS', 'smtp.mandrillapp.com'),
     port:                 ENV.fetch('SMTP_PORT', '587'),
-    password:             ENV.fetch('SMTP_PASSWORD'),
-    user_name:            ENV.fetch('SMTP_USERNAME'),
+    password:             ENV.fetch('SMTP_PASSWORD', 'hello'),
+    user_name:            ENV.fetch('SMTP_USERNAME', 'world'),
     authentication:       :plain,
     enable_starttls_auto: true,
   }
