@@ -119,6 +119,16 @@
           width: 9px;
         }
 
+        .progress-bar-wrapper .progress-bar.first {
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+
+        .progress-bar-wrapper .progress-bar.last {
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+
         .prize-data {
           flex: 1 1;
           display: flex;
