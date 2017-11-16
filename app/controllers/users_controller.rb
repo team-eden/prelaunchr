@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       # post user email and referral code to papaya
       begin
         uri = URI.parse("#{papaya_url}/referrals")
-        logger.info("Sending referral info to papaya, code: #{@user.referral_code} sender: #{@user.email}")
+        logger.info("Sending referral info to #{uri}, code: #{@user.referral_code} sender: #{@user.email}")
         Net::HTTP.post_form(uri, {"code" => @user.referral_code, "sender" => @user.email})
       rescue StandardError => e
         logger.info("Error saving user with email, #{email}")
@@ -92,17 +92,6 @@ class UsersController < ApplicationController
       "http://lvh.me:5000/"
     when "production"
       root_url
-    else
-      fail "missing papaya url for #{Rails.env}"
-    end
-  end
-
-  def papaya_base_url
-    case Rails.env
-    when "development"
-      "http://localhost:3000"
-    when "production"
-      "https://myacceptance.habit.com"
     else
       fail "missing papaya url for #{Rails.env}"
     end
