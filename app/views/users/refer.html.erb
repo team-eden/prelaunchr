@@ -113,7 +113,7 @@
               <div class="circle"><%= stop["count_label"] %></div>
             </div>
             <div class="progress-bar-wrapper">
-              <div class="progress-bar <% if index+1 > @user.referrals.count %>grayed<% end %>"></div>
+              <div class="progress-bar <% if index+1 > @user.referrals.count %>grayed<% end %> <% if index+1 == User::REFERRAL_STEPS.count %> last<%end%>"></div>
             </div>
             <div class="progress-data">
               <p><%= stop["html"].html_safe %></p>
