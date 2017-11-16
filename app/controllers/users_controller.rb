@@ -79,7 +79,7 @@ class UsersController < ApplicationController
   end
 
   def generate_facebook_share_message(referral_code)
-     "Thanks to Habit, Im following a nutrition plan tailor- made for me. Get $25 off at checkout with code #{referral_code} to get yours. Shop here #{referral_link(referral_code)}"
+     "Thanks to Habit, I\m following a nutrition plan tailor- made for me. Get $25 off at checkout with code #{referral_code} to get yours. Shop here #{referral_link(referral_code)}"
   end
 
   def generate_twitter_share_message(referral_code)
