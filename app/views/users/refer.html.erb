@@ -101,19 +101,19 @@
             &#36;&#36; RECIEVED
           </div>
           <div class="progress-bar-wrapper">
-            <div class="progress-bar"></div>
+            <div class="progress-bar first"></div>
           </div>
           <div class="progress-data">
             FRIENDS PURCHASED
           </div>
         </li>
-        <% stops.each do |stop| %>
+        <% stops.each_with_index do |stop, index| %>
           <li class="product">
             <div class="prize-data">
               <div class="circle"><%= stop["count_label"] %></div>
             </div>
             <div class="progress-bar-wrapper">
-              <div class="progress-bar"></div>
+              <div class="progress-bar <% if index+1 > @user.referrals.count %>grayed<% end %>"></div>
             </div>
             <div class="progress-data">
               <p><%= stop["html"].html_safe %></p>
