@@ -127,8 +127,6 @@
           background: $gray-lightest;
         }
 
-
-
         .progress-bar-wrapper .progress-bar.first {
           border-top-left-radius: 3px;
           border-top-right-radius: 3px;
@@ -271,9 +269,7 @@
       }
 
       .hero-headline {
-        @media only screen and (min-width: $desktop) {
-          width: 428px;
-        }
+        max-width: 428px
       }
     }
     .copy-link-wrapper {
