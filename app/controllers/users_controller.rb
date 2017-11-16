@@ -33,6 +33,7 @@ class UsersController < ApplicationController
       # post user email and referral code to papaya
       begin
         uri = URI.parse("#{papaya_url}/referrals")
+        logger.info("Sending referral info to papaya, code: #{@user.referral_code} sender: #{@user.email}")
         Net::HTTP.post_form(uri, {"code" => @user.referral_code, "sender" => @user.email})
       rescue StandardError => e
         logger.info("Error saving user with email, #{email}")
