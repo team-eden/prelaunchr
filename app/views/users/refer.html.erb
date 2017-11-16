@@ -15,7 +15,7 @@
     <!-- <div class=""> -->
       <div class="hero-headline-wrapper">
         <h1>Share Habit,<br>Get Rewarded</h1>
-        <p class="hero-headline" style="width:428px">Share your unique promo code <%= @user.referral_code %> and the link below via email, Facebook or Twitter and earn a $25 Amazon eGift Card* for each friend who purchases a Habit kit.</p>
+        <p class="hero-headline">Share your unique promo code <%= @user.referral_code %> and the link below via email, Facebook or Twitter and earn a $25 Amazon eGift Card* for each friend who purchases a Habit kit.</p>
       </div>
     <!-- </div> -->
       <div class="share-wrapper">
@@ -98,19 +98,19 @@
             &#36;&#36; RECIEVED
           </div>
           <div class="progress-bar-wrapper">
-            <div class="progress-bar"></div>
+            <div class="progress-bar first"></div>
           </div>
           <div class="progress-data">
             FRIENDS PURCHASED
           </div>
         </li>
-        <% stops.each do |stop| %>
+        <% stops.each_with_index do |stop, index| %>
           <li class="product">
             <div class="prize-data">
               <div class="circle"><%= stop["count_label"] %></div>
             </div>
             <div class="progress-bar-wrapper">
-              <div class="progress-bar"></div>
+              <div class="progress-bar <% if index+1 > @user.referrals.count %>grayed<% end %> <% if index+1 == User::REFERRAL_STEPS.count %> last<%end%>"></div>
             </div>
             <div class="progress-data">
               <p><%= stop["html"].html_safe %></p>
