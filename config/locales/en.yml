@@ -3,13 +3,8 @@
 
 en:
   amazon_policies:
-<<<<<<< HEAD
     section_1: >-
       "Referred friends must use your personal link when purchasing the service, and must be new customers to Habit. An <a href="https://amazon.com" target="_blank">Amazon.com</a> Gift Card (the "Reward") is earned when a kit is shipped to the referred customer: <a href="https://amazon.com" target="_blank">Amazon.com</a> is not a sponsor of this promotion. Except as required by law, <a href="https://amazon.com" target="_blank">Amazon.com</a> Gift Cards ("GCs") cannot be transferred for value or redeemed for cash. GCs may be used only for purchases of eligible goods at <a href="https://amazon.com" target="_blank">Amazon.com</a> or certain of its affiliated websites. For complete terms and conditions, see www.amazon.com/gc-legal. GCs are issued by ACI Gift Cards, Inc., a Washington corporation. All Amazon ®, ™ & © are IP of <a href="https://amazon.com" target="_blank">Amazon.com</a>, Inc. or its affiliates. No expiration date or service fees."
-=======
-    section_1: "This is some amazon stuff that you can write"
-    section_2: "Dang it"
->>>>>>> add correct mailer configuration
   homepage:
     header: "Habit Referral Program"
     subheader: "Give a friend $25 towards their Habit Kit, Get an Amazon eGift Card when they purchase"
