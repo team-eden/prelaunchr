@@ -5,6 +5,18 @@
 // min-width: 0px
 #refer{
   background: $white;
+
+  .last_amount {
+    display: flex;
+    flex-direction: column;
+
+    .subtext {
+      padding-top: 10px;
+      font-style: italic;
+      font-weight: 200;
+      font-size: 13px;
+    }
+  }
   .header {
     background: $gray;
     .habit-logo {
@@ -137,7 +149,6 @@
           .bar {
             border-radius: 4px;
             background: $green;
-            width: 165px; // this width needs to be dynamic...  see below to add class...
             height: 9px;
           }
         }
@@ -168,10 +179,12 @@
       }
     }
   }
+
+  .progress .mover .bar { width: 165px; }
   .prize-two .progress .mover .bar { width: 312px; }
-  .prize-three .progress .mover .bar { width: 566px; }
-  .prize-four .progress .mover .bar { width: 820px; }
-  .prize-five .progress .mover .bar { width: 1120px; }
+  .prize-three .progress .mover .bar { width: 500px; }
+  .prize-four .progress .mover .bar { width: 710px; }
+  .prize-five .progress .mover .bar { width: 1013px; }
 }
 
 @media only screen and (min-width: $tablet) {

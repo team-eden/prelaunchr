@@ -8,9 +8,6 @@ end
 
 Prelaunchr::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
-
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -41,7 +38,10 @@ Prelaunchr::Application.configure do
   config.assets.debug = true
 
   # For mailer configs
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => ENV['DEFAULT_MAILER_HOST'] }
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = ENV['DEFAULT_MAILER_HOST']
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 end
