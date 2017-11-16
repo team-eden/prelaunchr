@@ -53,5 +53,6 @@ module Prelaunchr
 
     # decides whether the prelaunch campaign has ended or not
     config.ended = ENV['CAMPAIGN_ENDED'].to_s == 'true'
+    config.papya_url = ENV['PAPYA_BASE_URL']
   end
 end
