@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   before_filter :skip_first_page, only: :new
   # before_filter :handle_ip, only: :create
 
-  helper_method :social_callback_url
   helper_method :referral_link
 
   def new
@@ -75,7 +74,7 @@ class UsersController < ApplicationController
   private
 
   def referral_link(referral_code)
-    "#{social_callback_url}/referral?code=#{CGI::escape(referral_code)}"
+    "#{papaya_url}referral?code=#{CGI::escape(referral_code)}"
   end
 
   def generate_facebook_share_message(referral_code)
@@ -84,17 +83,6 @@ class UsersController < ApplicationController
 
   def generate_twitter_share_message(referral_code)
     "Thanks to Habit, I\'m following a nutrition plan tailor- made for me. Get $25 off at checkout with code #{referral_code} to get yours. Shop here"
-  end
-
-  def social_callback_url
-    case Rails.env
-    when "development"
-      "http://lvh.me:3000/"
-    when "production"
-      Rails.application.config.papya_url
-    else
-      fail "missing papaya url for #{Rails.env}"
-    end
   end
 
   def skip_first_page

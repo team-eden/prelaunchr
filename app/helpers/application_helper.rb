@@ -4,7 +4,7 @@ module ApplicationHelper
     when "test"
       "http://example.com"
     when "development"
-      "http://localhost:3000"
+      "http://lvh.me:3000/"
     # when "staging" # staging
     #   "https://staging.habitbeta.com"
     when "acceptance", "production" # staging
