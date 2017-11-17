@@ -42,8 +42,8 @@ Prelaunchr::Application.configure do
   # config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = ENV['DEFAULT_MAILER_HOST']
 
-  config.action_mailer.asset_host = "rails.dev:3000"
-  config.action_controller.asset_host = "rails.dev:3000"
+  # config.action_mailer.asset_host = "localhost:3000"
+  # config.action_controller.asset_host = "locahost:3000"
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 end
