@@ -51,6 +51,10 @@ module Prelaunchr
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # URL for hosting assets
+    config.action_mailer.asset_host = ENV['MAIL_ASSET_HOST']
+    config.action_controller.asset_host = ENV['CONTROLLER_ASSET_HOST']
+
     # decides whether the prelaunch campaign has ended or not
     config.ended = ENV['CAMPAIGN_ENDED'].to_s == 'true'
     config.papya_url = ENV['PAPYA_BASE_URL']
