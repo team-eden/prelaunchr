@@ -22,15 +22,18 @@
 <!--         <p>Share your unique link via email, Facebook<br>or Twitter and earn an Amazon eGift Card<br>each friend who purchases a Habit kit.</p> -->
         <div class="copy-link-wrapper">
           <div class="copy-link">
-            <span><%= root_url %>?ref=<%= @user.referral_code %></span>
+            <span><%= referral_link(@user.referral_code) %></span>
           </div>
           <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
           <div class="social-links">
             <%= social_share_button_tag(@facebook_share_message,
                                         :url => referral_link(@user.referral_code),
                                         :desc => @facebook_share_message,
+                                        :image => image_url('refer/social.jpg'),
                                         :'data-twitter-title' => @twitter_share_message,
-                                        :'data-facebook-title' => @facebook_share_message
+                                        :'data-facebook-title' => @facebook_share_message,
+                                        :'data-source' => image_url('refer/social.jpg'),
+                                        :'data-caption' => image_url('refer/social.jpg'),
             ) %>
           </div>
         </div>

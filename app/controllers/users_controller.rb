@@ -75,7 +75,7 @@ class UsersController < ApplicationController
   private
 
   def referral_link(referral_code)
-    "#{social_callback_url}?ref=#{CGI::escape(referral_code)}"
+    "#{social_callback_url}buy?ref=#{CGI::escape(referral_code)}"
   end
 
   def generate_facebook_share_message(referral_code)
@@ -89,9 +89,9 @@ class UsersController < ApplicationController
   def social_callback_url
     case Rails.env
     when "development"
-      "http://lvh.me:5000/"
+      "http://lvh.me:3000/"
     when "production"
-      root_url
+      Rails.application.config.papya_url
     else
       fail "missing papaya url for #{Rails.env}"
     end
