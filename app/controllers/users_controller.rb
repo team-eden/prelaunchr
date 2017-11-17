@@ -35,10 +35,10 @@ class UsersController < ApplicationController
         uri = URI.parse("#{papaya_url}/referrals")
         logger.info("Sending referral info to #{uri}, code: #{@user.referral_code} sender: #{@user.email}")
         Net::HTTP.post_form(uri, {"code" => @user.referral_code, "sender" => @user.email})
-        redirect_to '/refer-a-friend'
+        redirect_to '/refer-a-friend' and return
       rescue StandardError => e
         logger.info("Error saving user with email, #{email}")
-        redirect_to root_path, alert: 'Something went wrong! ' + e.message
+        redirect_to root_path, alert: "Something went wrong! #{ e.message}" and return
       end
 
     else
