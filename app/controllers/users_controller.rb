@@ -75,7 +75,7 @@ class UsersController < ApplicationController
   private
 
   def referral_link(referral_code)
-    "#{social_callback_url}buy?ref=#{CGI::escape(referral_code)}"
+    "#{social_callback_url}/referral?code=#{CGI::escape(referral_code)}"
   end
 
   def generate_facebook_share_message(referral_code)
