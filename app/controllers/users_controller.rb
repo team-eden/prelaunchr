@@ -74,7 +74,7 @@ class UsersController < ApplicationController
   private
 
   def referral_link(referral_code)
-    "#{papaya_url}referral?code=#{CGI::escape(referral_code)}"
+    "#{papaya_url}/referral?code=#{CGI::escape(referral_code)}"
   end
 
   def generate_facebook_share_message(referral_code)
