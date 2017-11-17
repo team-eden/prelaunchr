@@ -60,7 +60,7 @@
 %>
 
 <!-- Prizes -->
-<div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
+<div class="prizes">
   <div class="page-content">
     <h2>How It Works</h2>
 
@@ -101,7 +101,7 @@
             &#36;&#36; RECIEVED
           </div>
           <div class="progress-bar-wrapper">
-            <div class="progress-bar first"></div>
+            <div class="progress-bar first grayed"></div>
           </div>
           <div class="progress-data">
             FRIENDS PURCHASED
@@ -113,7 +113,7 @@
               <div class="circle"><%= stop["count_label"] %></div>
             </div>
             <div class="progress-bar-wrapper">
-              <div class="progress-bar <% if index+1 > @user.referrals.count %>grayed<% end %> <% if index+1 == User::REFERRAL_STEPS.count %> last<%end%>"></div>
+              <div class="progress-bar grayed <% if index+1 == User::REFERRAL_STEPS.count %> last<%end%>"></div>
             </div>
             <div class="progress-data">
               <p><%= stop["html"].html_safe %></p>
