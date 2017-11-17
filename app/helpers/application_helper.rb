@@ -5,13 +5,13 @@ module ApplicationHelper
       "http://example.com"
     when "development"
       "http://localhost:3000"
-    when "staging" # staging
-      "https://staging.habitbeta.com"
-    when "acceptance" # staging
+    # when "staging" # staging
+    #   "https://staging.habitbeta.com"
+    when "acceptance", "production" # staging
       "https://myacceptance.habitbeta.com"
-    when "qa"
-      "https://myqa.habitbeta.com"
-    when "production"
+    # when "qa"
+    #   "https://myqa.habitbeta.com"
+    when "REAL production"
       "https://my.habit.com"
     else
       fail "missing papaya url for #{Rails.env}"

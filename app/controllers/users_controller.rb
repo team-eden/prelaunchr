@@ -33,14 +33,14 @@ class UsersController < ApplicationController
       # post user email and referral code to papaya
       begin
         uri = URI.parse("#{papaya_url}/referrals")
-        logger.info("Sending referral info to papaya, code: #{@user.referral_code} sender: #{@user.email}")
+        logger.info("Sending referral info to #{uri}, code: #{@user.referral_code} sender: #{@user.email}")
         Net::HTTP.post_form(uri, {"code" => @user.referral_code, "sender" => @user.email})
+        redirect_to '/refer-a-friend'
       rescue StandardError => e
         logger.info("Error saving user with email, #{email}")
         redirect_to root_path, alert: 'Something went wrong! ' + e.message
       end
 
-      redirect_to '/refer-a-friend'
     else
       logger.info("Error saving user with email, #{email}")
       redirect_to root_path, alert: 'Something went wrong! ' + @user.errors.full_messages.join("\n")
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
   private
 
   def referral_link(referral_code)
-    "#{social_callback_url}?ref=#{CGI::escape(referral_code)}"
+    "#{social_callback_url}buy?ref=#{CGI::escape(referral_code)}"
   end
 
   def generate_facebook_share_message(referral_code)
@@ -89,20 +89,9 @@ class UsersController < ApplicationController
   def social_callback_url
     case Rails.env
     when "development"
-      "http://lvh.me:5000/"
+      "http://lvh.me:3000/"
     when "production"
-      root_url
-    else
-      fail "missing papaya url for #{Rails.env}"
-    end
-  end
-
-  def papaya_base_url
-    case Rails.env
-    when "development"
-      "http://localhost:3000"
-    when "production"
-      "https://myacceptance.habit.com"
+      Rails.application.config.papya_url
     else
       fail "missing papaya url for #{Rails.env}"
     end
