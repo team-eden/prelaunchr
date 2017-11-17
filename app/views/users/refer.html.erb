@@ -133,9 +133,7 @@
     %>
 
     <div class="count-wrapper">
-      <% if referrals_count == 0 %>
-        <p>No friends have purchased Habit.</p>
-      <% else %>
+      <% if referrals_count != 0 %>
         <p><%= referrals_count %> <%= words %> joined!</p>
       <% end %>
       <p class="check">Keep checking</p>
