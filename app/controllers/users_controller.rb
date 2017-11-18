@@ -7,8 +7,6 @@ class UsersController < ApplicationController
   before_filter :skip_first_page, only: :new
   # before_filter :handle_ip, only: :create
 
-  helper_method :referral_link
-
   def new
     @bodyId = 'new'
     @is_mobile = mobile_device?
@@ -72,10 +70,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def referral_link(referral_code)
-    "#{papaya_url}/referral?code=#{CGI::escape(referral_code)}"
-  end
 
   def generate_facebook_share_message(referral_code)
      "Thanks to Habit, I\m following a nutrition plan tailor- made for me. Get $25 off at checkout with code #{referral_code} to get yours. Shop here #{referral_link(referral_code)}"
