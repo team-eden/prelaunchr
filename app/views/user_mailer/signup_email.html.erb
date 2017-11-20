@@ -86,8 +86,8 @@
 <body style="margin: 0; padding: 0;">
   <table class="table">
     <thead class="table-head">
-      <tr><td><%= image_tag image_url('email/logo'), alt: 'Habit Logo', :class => "logo" %></td></tr>
-      <tr><td><%= image_tag image_url('email/header-image'), alt: 'Habit Header', :class => "header-image" %></td></tr>
+      <tr><td><%= image_tag image_url('email/logo.png'), alt: 'Habit Logo', :class => "logo" %></td></tr>
+      <tr><td><%= image_tag image_url('email/header-image.jpg'), alt: 'Habit Header', :class => "header-image" %></td></tr>
     </thead>
 
     <tbody>
@@ -99,8 +99,8 @@
         <td>
           <tr>
             <td class="social-links">
-              <a href="http://twitter.com/share?url=<%= referral_link(@user.referral_code) %>&text=<%= CGI::escape(generate_twitter_share_message(@user.referral_code)) %>" target="_blank"> <%= image_tag image_url('email/twitter-social'), :class => "social-icon" %></a> &nbsp;
-              <a href="http://www.facebook.com/sharer/sharer.php?u=<%= referral_link(@user.referral_code) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Habit" target="_blank"><%= image_tag image_url('email/facebook-social'), :class => "social-icon" %></a>
+              <a href="http://twitter.com/share?url=<%= referral_link(@user.referral_code) %>&text=<%= CGI::escape(generate_twitter_share_message(@user.referral_code)) %>" target="_blank"> <%= image_tag image_url('email/twitter-social.jpg'), :class => "social-icon" %></a> &nbsp;
+              <a href="http://www.facebook.com/sharer/sharer.php?u=<%= referral_link(@user.referral_code) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Habit" target="_blank"><%= image_tag image_url('email/facebook-social.jpg'), :class => "social-icon" %></a>
             </td>
           </tr>
         </td>
