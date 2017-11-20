@@ -35,7 +35,7 @@
       <tr style="display: block; font-family: arial;">
         <td class="social-links" style="display: block; font-family: arial; padding-top: 30px; padding-bottom: 30px;">
           <a href="http://twitter.com/share?url=<%= referral_link(@user.referral_code) %>&text=<%= CGI::escape(generate_twitter_share_message(@user.referral_code)) %>" target="_blank"> <%= image_tag image_url('email/twitter-social.jpg'), :style => "max-width: 47px;" %></a> &nbsp;
-          <a href="http://www.facebook.com/sharer/sharer.php?u=<%= referral_link(@user.referral_code) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Habit" target="_blank"><%= image_tag image_url('email/facebook-social.jpg'), :style => "max-width: 47px;" %></a>
+          <a href="http://www.facebook.com/sharer/sharer.php?u=<%= referral_link(@user.referral_code) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Habit&quote=<%= CGI::escape(generate_facebook_share_message(@user.referral_code)) %>" target="_blank"><%= image_tag image_url('email/facebook-social.jpg'), :style => "max-width: 47px;" %></a>
         </td>
       </tr>
     </tbody>
