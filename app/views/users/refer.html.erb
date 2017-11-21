@@ -27,10 +27,10 @@
           <div class="social-links">
             <%= social_share_button_tag(@facebook_share_message,
                                         :url => referral_link(@user.referral_code),
-                                        :desc => @facebook_share_message,
+                                        :desc => @facebook_share_message.gsub(/'/,"&apos;"),
                                         :image => image_url('refer/social.jpg'),
                                         :'data-twitter-title' => @twitter_share_message,
-                                        :'data-facebook-title' => @facebook_share_message,
+                                        :'data-facebook-title' => @facebook_share_message.gsub(/'/,"&apos;"),
                                         :'data-source' => image_url('refer/social.jpg'),
                                         :'data-caption' => image_url('refer/social.jpg'),
             ) %>
