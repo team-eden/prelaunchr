@@ -45,7 +45,7 @@
           border: 1px solid $gray-medium;
           height: 40px;
           line-height: 40px;
-          overflow-x: scroll; // update this to somethign better
+          overflow-x: hidden; // update this to somethign better
           text-align: center;
           span {
             color: $gray-lightest;
@@ -290,7 +290,7 @@
     .hero {
       .copy-link-wrapper {
         margin: 0;
-        width: 340px;
+        width: 412px;
         .copy-link {
           text-align: left;
         }
