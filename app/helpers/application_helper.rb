@@ -19,11 +19,11 @@ module ApplicationHelper
       "http://lvh.me:3000"
     # when "staging" # staging
     #   "https://staging.habitbeta.com"
-    when "acceptance", "production" # staging
+    when "acceptance"
       "https://myacceptance.habitbeta.com"
     # when "qa"
     #   "https://myqa.habitbeta.com"
-    when "REAL production"
+    when "production"
       "https://my.habit.com"
     else
       fail "missing papaya url for #{Rails.env}"
