@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "Habit <welcome@habit.com>"
+  default from: "Habit <support@habit.com>"
   add_template_helper(ApplicationHelper)
 
   def signup_email(user_id)
