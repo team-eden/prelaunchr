@@ -11,6 +11,10 @@ development:
   <<: *default
   database: development
 
+acceptance:
+  <<: *default
+  database: acceptance
+
 test:
   <<: *default
   database: test

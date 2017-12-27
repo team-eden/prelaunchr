@@ -20,7 +20,7 @@ module ApplicationHelper
     # when "staging" # staging
     #   "https://staging.habitbeta.com"
     when "acceptance"
-      "https://myacceptance.habitbeta.com"
+      "https://#{papaya_credentials}myacceptance.habitbeta.com"
     # when "qa"
     #   "https://myqa.habitbeta.com"
     when "production"
@@ -28,5 +28,10 @@ module ApplicationHelper
     else
       fail "missing papaya url for #{Rails.env}"
     end
+  end
+
+  def papaya_credentials
+    basic_auth = [ENV['PAPAYA_BASIC_USERNAME'], ENV['PAPAYA_BASIC_PASSWORD']].compact.join(':')
+    basic_auth.presence + "@" rescue nil
   end
 end
