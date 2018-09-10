@@ -15,7 +15,7 @@
     <!-- <div class=""> -->
       <div class="hero-headline-wrapper">
         <h1>Share Habit,<br>Get Rewarded</h1>
-        <p class="hero-headline">Share your unique promo code <%= @user.referral_code %> and the link below via email, Facebook or Twitter and earn a $50 Amazon eGift Card* for each friend who purchases a Habit kit.</p>
+        <p class="hero-headline">Share your unique promo code <%= @user.referral_code %> and the link below via email, Facebook or Twitter and earn a $25 Amazon eGift Card* for each friend who purchases a Habit kit.</p>
       </div>
     <!-- </div> -->
       <div class="share-wrapper">
@@ -57,6 +57,88 @@
     end
   }
 %>
+
+<!-- Prizes
+			<div class="prizes">
+			  <div class="page-content">
+			    <h2>How It Works</h2>
+		
+			    <div class="progress-wrapper">
+			      <ul class="clearfix">
+			        <li class="title">
+			          <div class="prize-data">
+			            <p>FRIENDS PURCHASED</p>
+			          </div>
+			          <div class="progress-bottom prize-data">
+			            <p> &#36;&#36; RECEIVED</p>
+			          </div>
+			        </li>
+		
+			        <% stops.each do |stop| %>
+			          <li class="product  <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
+			            <div class="prize-data">
+			              <div class="circle"><%= stop["count_label"] %></div>
+			            </div>
+			            <div class="progress-bottom prize-data">
+			              <p><%= stop["html"].html_safe %></p>
+			            </div>
+			          </li>
+			        <% end %>
+			      </ul>
+		
+			      <div class="progress">
+			        <div class="mover">
+			          <div class="bar clearfix"></div>
+			        </div>
+			      </div>
+			    </div>
+		
+			    <div class="progress-wrapper-mobile">
+			      <ul class="progress">
+			        <li class="product">
+			          <div class="progress-data">
+			            FRIENDS PURCHASED
+			          </div>
+			          <div class="progress-bar-wrapper">
+			            <div class="progress-bar first grayed"></div>
+			          </div>
+			          <div class="prize-data">
+			            &#36;&#36; RECEIVED
+			          </div>
+		
+			        </li>
+			        <% stops.each_with_index do |stop, index| %>
+			          <li class="product">
+			            <div class="prize-data">
+			              <div class="circle"><%= stop["count_label"] %></div>
+			            </div>
+			            <div class="progress-bar-wrapper">
+			              <div class="progress-bar grayed <% if index+1 == User::REFERRAL_STEPS.count %> last<%end%>"></div>
+			            </div>
+			            <div class="progress-data">
+			              <p><%= stop["html"].html_safe %></p>
+			            </div>
+			          </li>
+			        <% end %>
+			      </ul>
+			    </div>
+		
+			    <%
+			      words = ''
+			      if referrals_count == 1
+			        words = 'friend has'
+			      else
+			        words = 'friends have'
+			      end
+			    %>
+		
+			    <div class="count-wrapper">
+			      <% if referrals_count != 0 %>
+			        <p><%= referrals_count %> <%= words %> joined!</p>
+			      <% end %>
+			    </div>  -->
+		
+
 <div class="prizes">
   <div class="page-content">
 
