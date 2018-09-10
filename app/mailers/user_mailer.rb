@@ -5,6 +5,6 @@ class UserMailer < ActionMailer::Base
   def signup_email(user_id)
     @user = User.find user_id
 
-    mail(:to => @user.email, :subject => "Start sharing Habit to earn Amazon eGift Cards")
+    mail(:to => @user.email, :subject => "Start sharing Habit to earn $100+ in Amazon eGift Cards")
   end
 end
